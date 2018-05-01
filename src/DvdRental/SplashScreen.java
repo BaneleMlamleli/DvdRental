@@ -95,6 +95,10 @@ public class SplashScreen extends javax.swing.JFrame {
                 Thread.sleep(50);   //delaying time
                 SplashScreen.lblPercent.setText(Integer.toString(i)+"%");
                 SplashScreen.progressBar.setValue(i);
+                if(i == 100){
+                    splash.dispose();//closing the splash screen
+                    new DvdRental().setVisible(true); //opening the new window
+                }
             }
         }catch(Exception e){
             e.printStackTrace();
