@@ -61,6 +61,92 @@ public class DvdRental extends javax.swing.JFrame {
         btnAdd = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        pnlHome = new javax.swing.JPanel();
+        pnlAdd = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtName = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        txtSurname = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel29 = new javax.swing.JLabel();
+        txtCredit = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        txtPhoneNumber = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel32 = new javax.swing.JLabel();
+        btnAddCustomer = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        btnAddMovie = new javax.swing.JButton();
+        lblDisplayCategoryPicture = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        txtPrice = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        cmbCategory = new javax.swing.JComboBox<>();
+        cmbNewRelease = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
+        txtTitle = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        pnlDelete = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        btnDeleteCustomer = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDisplayCustomers = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblDisplayMovies = new javax.swing.JTable();
+        btnDeleteMovie = new javax.swing.JButton();
+        pnlAllMovies = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblDisplayAllMovies = new javax.swing.JTable();
+        pnlAvailableMovies = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblDisplayAvailableMovies = new javax.swing.JTable();
+        pnlSearch = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblDisplaySearchedMovies = new javax.swing.JTable();
+        jLabel34 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        btnSearchMovie = new javax.swing.JButton();
+        txtSearchMovie = new javax.swing.JTextField();
+        pnlCustomer = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblDisplayAllCustomers = new javax.swing.JTable();
+        pnlRent = new javax.swing.JPanel();
+        jSeparator8 = new javax.swing.JSeparator();
+        txtAvailableBalance = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        cmbSelectCustomer = new javax.swing.JComboBox<>();
+        jLabel43 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        txtDisplayCustomerName = new javax.swing.JTextField();
+        txtDisplayCutomerSurname = new javax.swing.JTextField();
+        jSeparator10 = new javax.swing.JSeparator();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        txtReturnCategory = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        txtReturnTitle = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        txtReturnPrice = new javax.swing.JTextField();
+        btnReturnMovie = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        btnRentMovie = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblDisplayRentalMovies = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DVD Rental");
@@ -72,30 +158,31 @@ public class DvdRental extends javax.swing.JFrame {
 
         pnlHeaderWords.setBackground(new java.awt.Color(0, 0, 51));
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("CINEMA");
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 255, 0));
         jLabel10.setText("TO");
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 51, 204));
         jLabel11.setText("YOUR");
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 153, 255));
         jLabel12.setText("HOME");
 
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(210, 33, 113));
         jLabel13.setText("WE");
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 255, 255));
         jLabel8.setText("BRING");
 
+        jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("video rental v2.0");
 
@@ -155,7 +242,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Rent_32px.png"))); // NOI18N
 
-        jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Rent");
@@ -167,17 +254,19 @@ public class DvdRental extends javax.swing.JFrame {
             .addGroup(btnRentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel21)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         btnRentLayout.setVerticalGroup(
             btnRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRentLayout.createSequentialGroup()
-                .addGroup(btnRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
+                .addComponent(jLabel20)
                 .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(btnRentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlHeader.add(btnRent, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 100, 40));
@@ -195,7 +284,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Customer_32px.png"))); // NOI18N
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Customers");
@@ -204,12 +293,11 @@ public class DvdRental extends javax.swing.JFrame {
         btnCustomers.setLayout(btnCustomersLayout);
         btnCustomersLayout.setHorizontalGroup(
             btnCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnCustomersLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(btnCustomersLayout.createSequentialGroup()
                 .addComponent(jLabel16)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
-                .addContainerGap())
+                .addGap(0, 8, Short.MAX_VALUE))
         );
         btnCustomersLayout.setVerticalGroup(
             btnCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +323,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Search_32px.png"))); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Search");
@@ -244,22 +332,19 @@ public class DvdRental extends javax.swing.JFrame {
         btnSearch.setLayout(btnSearchLayout);
         btnSearchLayout.setHorizontalGroup(
             btnSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSearchLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(btnSearchLayout.createSequentialGroup()
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel19)
-                .addGap(44, 44, 44))
+                .addGap(0, 7, Short.MAX_VALUE))
         );
         btnSearchLayout.setVerticalGroup(
             btnSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnSearchLayout.createSequentialGroup()
-                .addComponent(jLabel18)
+                .addGroup(btnSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
                 .addGap(0, 2, Short.MAX_VALUE))
-            .addGroup(btnSearchLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlHeader.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 100, 40));
@@ -277,7 +362,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Movie Projector_32px.png"))); // NOI18N
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("All movies");
@@ -300,7 +385,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        pnlHeader.add(btnAllMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 120, 40));
+        pnlHeader.add(btnAllMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 140, 40));
 
         btnAvailableMovies.setBackground(new java.awt.Color(0, 0, 152));
         btnAvailableMovies.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -315,7 +400,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/New Ticket_32px.png"))); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Available Movies");
@@ -340,7 +425,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        pnlHeader.add(btnAvailableMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 180, 40));
+        pnlHeader.add(btnAvailableMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 190, 40));
 
         btnDelete.setBackground(new java.awt.Color(0, 0, 152));
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -355,7 +440,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cancel_32px.png"))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Delete");
@@ -369,7 +454,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(8, 8, 8)
                 .addComponent(jLabel5)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         btnDeleteLayout.setVerticalGroup(
             btnDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,7 +465,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        pnlHeader.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, 40));
+        pnlHeader.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 110, 40));
 
         btnAdd.setBackground(new java.awt.Color(0, 255, 255));
         btnAdd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -395,7 +480,7 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add_32px.png"))); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Add");
@@ -409,7 +494,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(8, 8, 8)
                 .addComponent(jLabel3)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         btnAddLayout.setVerticalGroup(
             btnAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,19 +505,1072 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        pnlHeader.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 120, 40));
+        pnlHeader.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, 40));
+
+        pnlHome.setBackground(new java.awt.Color(51, 153, 255));
+        pnlHome.setLayout(new java.awt.CardLayout());
+
+        pnlAdd.setBackground(new java.awt.Color(0, 255, 255));
+
+        jTabbedPane1.setBackground(new java.awt.Color(0, 153, 153));
+        jTabbedPane1.setBorder(null);
+        jTabbedPane1.setFont(new java.awt.Font("Cooper Black", 0, 20)); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel22.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel22.setText("Name");
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtName.setBackground(new java.awt.Color(0, 153, 153));
+        txtName.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(null);
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Plus_96px.png"))); // NOI18N
+        jLabel23.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtSurname.setBackground(new java.awt.Color(0, 153, 153));
+        txtSurname.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtSurname.setForeground(new java.awt.Color(255, 255, 255));
+        txtSurname.setBorder(null);
+        txtSurname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSurnameActionPerformed(evt);
+            }
+        });
+
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel29.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel29.setText("Surname");
+
+        txtCredit.setEditable(false);
+        txtCredit.setBackground(new java.awt.Color(0, 153, 153));
+        txtCredit.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtCredit.setForeground(new java.awt.Color(255, 255, 255));
+        txtCredit.setText("100.00");
+        txtCredit.setBorder(null);
+        txtCredit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCreditActionPerformed(evt);
+            }
+        });
+
+        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel30.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel30.setText("Credit");
+
+        jLabel31.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel31.setText("Phone number");
+
+        txtPhoneNumber.setBackground(new java.awt.Color(0, 153, 153));
+        txtPhoneNumber.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtPhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
+        txtPhoneNumber.setBorder(null);
+        txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneNumberActionPerformed(evt);
+            }
+        });
+
+        jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel32.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel32.setText("R");
+
+        btnAddCustomer.setFont(new java.awt.Font("Cooper Black", 0, 48)); // NOI18N
+        btnAddCustomer.setForeground(new java.awt.Color(255, 51, 51));
+        btnAddCustomer.setText("Add customer");
+        btnAddCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel22)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                                .addComponent(txtName))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel31)
+                                .addComponent(jSeparator4)
+                                .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jSeparator2)
+                                    .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel30)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29)))
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(143, 143, 143)
+                                        .addComponent(jLabel30)
+                                        .addGap(10, 10, 10)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel32)
+                                            .addComponent(txtCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGap(16, 16, 16))
+        );
+
+        jTabbedPane1.addTab("Customer", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel33.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel33.setText("Category");
+
+        jLabel35.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel35.setText("New release");
+
+        btnAddMovie.setFont(new java.awt.Font("Cooper Black", 0, 48)); // NOI18N
+        btnAddMovie.setForeground(new java.awt.Color(255, 51, 51));
+        btnAddMovie.setText("Add movie");
+        btnAddMovie.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAddMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddMovieActionPerformed(evt);
+            }
+        });
+
+        lblDisplayCategoryPicture.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        lblDisplayCategoryPicture.setForeground(new java.awt.Color(0, 102, 102));
+        lblDisplayCategoryPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDisplayCategoryPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Movie Projector_96px.png"))); // NOI18N
+        lblDisplayCategoryPicture.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel39.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel39.setText("Price");
+
+        jLabel40.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel40.setText("R");
+
+        txtPrice.setBackground(new java.awt.Color(0, 153, 153));
+        txtPrice.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtPrice.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrice.setBorder(null);
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
+
+        jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
+
+        cmbCategory.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        cmbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horror", "Sci-fi", "Drama", "Romance", "Comedy", "Action", "Cartoon", " " }));
+        cmbCategory.setBorder(null);
+
+        cmbNewRelease.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        cmbNewRelease.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cmbNewRelease.setBorder(null);
+
+        jLabel36.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel36.setText("Title");
+
+        txtTitle.setBackground(new java.awt.Color(0, 153, 153));
+        txtTitle.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtTitle.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitle.setBorder(null);
+        txtTitle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTitleActionPerformed(evt);
+            }
+        });
+
+        jSeparator6.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel35)
+                            .addComponent(cmbNewRelease, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel36)
+                                .addComponent(jSeparator6)
+                                .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel40)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)))
+                .addComponent(lblDisplayCategoryPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblDisplayCategoryPicture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbNewRelease, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel40)
+                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(30, 30, 30)
+                        .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGap(16, 16, 16))
+        );
+
+        jTabbedPane1.addTab("Movie", jPanel2);
+
+        javax.swing.GroupLayout pnlAddLayout = new javax.swing.GroupLayout(pnlAdd);
+        pnlAdd.setLayout(pnlAddLayout);
+        pnlAddLayout.setHorizontalGroup(
+            pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+        pnlAddLayout.setVerticalGroup(
+            pnlAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+
+        pnlHome.add(pnlAdd, "card2");
+
+        pnlDelete.setBackground(new java.awt.Color(0, 255, 255));
+
+        jTabbedPane2.setBorder(null);
+        jTabbedPane2.setFont(new java.awt.Font("Cooper Black", 0, 20)); // NOI18N
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+
+        btnDeleteCustomer.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
+        btnDeleteCustomer.setForeground(new java.awt.Color(255, 51, 51));
+        btnDeleteCustomer.setText("Delete");
+        btnDeleteCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDeleteCustomer.setName(""); // NOI18N
+        btnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCustomerActionPerformed(evt);
+            }
+        });
+
+        tblDisplayCustomers.setBorder(null);
+        tblDisplayCustomers.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayCustomers.setForeground(new java.awt.Color(0, 153, 153));
+        tblDisplayCustomers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Surname", "Phone number", "Credit", "Can rent?"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblDisplayCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblDisplayCustomers.setGridColor(new java.awt.Color(153, 153, 153));
+        tblDisplayCustomers.setIntercellSpacing(new java.awt.Dimension(3, 3));
+        jScrollPane1.setViewportView(tblDisplayCustomers);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Customer", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
+
+        tblDisplayMovies.setBorder(null);
+        tblDisplayMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title", "Category", "New release", "Price", "Available"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblDisplayMovies);
+
+        btnDeleteMovie.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
+        btnDeleteMovie.setForeground(new java.awt.Color(255, 51, 51));
+        btnDeleteMovie.setText("Delete");
+        btnDeleteMovie.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDeleteMovie.setName(""); // NOI18N
+        btnDeleteMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteMovieActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeleteMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDeleteMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Movie", jPanel4);
+
+        javax.swing.GroupLayout pnlDeleteLayout = new javax.swing.GroupLayout(pnlDelete);
+        pnlDelete.setLayout(pnlDeleteLayout);
+        pnlDeleteLayout.setHorizontalGroup(
+            pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
+        );
+        pnlDeleteLayout.setVerticalGroup(
+            pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
+        );
+
+        pnlHome.add(pnlDelete, "card3");
+
+        pnlAllMovies.setBackground(new java.awt.Color(0, 255, 255));
+
+        tblDisplayAllMovies.setBorder(null);
+        tblDisplayAllMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayAllMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title", "Category", "New release", "Price", "Available"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblDisplayAllMovies);
+
+        javax.swing.GroupLayout pnlAllMoviesLayout = new javax.swing.GroupLayout(pnlAllMovies);
+        pnlAllMovies.setLayout(pnlAllMoviesLayout);
+        pnlAllMoviesLayout.setHorizontalGroup(
+            pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlAllMoviesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        pnlAllMoviesLayout.setVerticalGroup(
+            pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+            .addGroup(pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAllMoviesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        pnlHome.add(pnlAllMovies, "card4");
+
+        pnlAvailableMovies.setBackground(new java.awt.Color(0, 255, 255));
+
+        tblDisplayAvailableMovies.setBorder(null);
+        tblDisplayAvailableMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayAvailableMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title", "Category", "New release", "Price", "Available"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tblDisplayAvailableMovies);
+
+        javax.swing.GroupLayout pnlAvailableMoviesLayout = new javax.swing.GroupLayout(pnlAvailableMovies);
+        pnlAvailableMovies.setLayout(pnlAvailableMoviesLayout);
+        pnlAvailableMoviesLayout.setHorizontalGroup(
+            pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlAvailableMoviesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        pnlAvailableMoviesLayout.setVerticalGroup(
+            pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+            .addGroup(pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlAvailableMoviesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        pnlHome.add(pnlAvailableMovies, "card6");
+
+        pnlSearch.setBackground(new java.awt.Color(0, 255, 255));
+
+        tblDisplaySearchedMovies.setBorder(null);
+        tblDisplaySearchedMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplaySearchedMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title", "Category", "New release", "Price", "Available"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tblDisplaySearchedMovies);
+
+        jLabel34.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel34.setText("Search movie");
+
+        jSeparator7.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSearchMovie.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        btnSearchMovie.setForeground(new java.awt.Color(0, 153, 153));
+        btnSearchMovie.setText("Search");
+        btnSearchMovie.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSearchMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchMovieActionPerformed(evt);
+            }
+        });
+
+        txtSearchMovie.setBackground(new java.awt.Color(0, 255, 255));
+        txtSearchMovie.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtSearchMovie.setForeground(new java.awt.Color(255, 255, 255));
+        txtSearchMovie.setBorder(null);
+        txtSearchMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchMovieActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
+        pnlSearch.setLayout(pnlSearchLayout);
+        pnlSearchLayout.setHorizontalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSearchLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlSearchLayout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtSearchMovie))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSearchLayout.createSequentialGroup()
+                                .addGap(0, 137, Short.MAX_VALUE)
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(102, 102, 102)
+                        .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        pnlSearchLayout.setVerticalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSearchLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(txtSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnlHome.add(pnlSearch, "card5");
+
+        pnlCustomer.setBackground(new java.awt.Color(0, 255, 255));
+
+        tblDisplayAllCustomers.setBorder(null);
+        tblDisplayAllCustomers.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayAllCustomers.setForeground(new java.awt.Color(0, 153, 153));
+        tblDisplayAllCustomers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Surname", "Phone number", "Credit", "Can rent?"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblDisplayAllCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblDisplayAllCustomers.setGridColor(new java.awt.Color(153, 153, 153));
+        tblDisplayAllCustomers.setIntercellSpacing(new java.awt.Dimension(3, 3));
+        jScrollPane6.setViewportView(tblDisplayAllCustomers);
+
+        javax.swing.GroupLayout pnlCustomerLayout = new javax.swing.GroupLayout(pnlCustomer);
+        pnlCustomer.setLayout(pnlCustomerLayout);
+        pnlCustomerLayout.setHorizontalGroup(
+            pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCustomerLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        pnlCustomerLayout.setVerticalGroup(
+            pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+            .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        pnlHome.add(pnlCustomer, "card7");
+
+        pnlRent.setBackground(new java.awt.Color(0, 255, 255));
+
+        jSeparator8.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtAvailableBalance.setBackground(new java.awt.Color(0, 255, 255));
+        txtAvailableBalance.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtAvailableBalance.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvailableBalance.setBorder(null);
+        txtAvailableBalance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAvailableBalanceActionPerformed(evt);
+            }
+        });
+
+        jLabel41.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel41.setText("R");
+
+        cmbSelectCustomer.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        cmbSelectCustomer.setBorder(null);
+
+        jLabel43.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel43.setText("Select customer");
+
+        jSeparator9.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtDisplayCustomerName.setBackground(new java.awt.Color(0, 255, 255));
+        txtDisplayCustomerName.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtDisplayCustomerName.setForeground(new java.awt.Color(255, 255, 255));
+        txtDisplayCustomerName.setBorder(null);
+        txtDisplayCustomerName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDisplayCustomerNameActionPerformed(evt);
+            }
+        });
+
+        txtDisplayCutomerSurname.setBackground(new java.awt.Color(0, 255, 255));
+        txtDisplayCutomerSurname.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtDisplayCutomerSurname.setForeground(new java.awt.Color(255, 255, 255));
+        txtDisplayCutomerSurname.setBorder(null);
+        txtDisplayCutomerSurname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDisplayCutomerSurnameActionPerformed(evt);
+            }
+        });
+
+        jSeparator10.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel5.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 2, true));
+
+        jLabel44.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel44.setText("Return movie");
+
+        jLabel47.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel47.setText("Category");
+
+        jLabel48.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel48.setText("Title");
+
+        jLabel49.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel49.setText("Price");
+
+        txtReturnCategory.setBackground(new java.awt.Color(0, 255, 255));
+        txtReturnCategory.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtReturnCategory.setForeground(new java.awt.Color(255, 255, 255));
+        txtReturnCategory.setBorder(null);
+        txtReturnCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReturnCategoryActionPerformed(evt);
+            }
+        });
+
+        jSeparator11.setBackground(new java.awt.Color(255, 255, 255));
+
+        jSeparator12.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtReturnTitle.setBackground(new java.awt.Color(0, 255, 255));
+        txtReturnTitle.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtReturnTitle.setForeground(new java.awt.Color(255, 255, 255));
+        txtReturnTitle.setBorder(null);
+        txtReturnTitle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReturnTitleActionPerformed(evt);
+            }
+        });
+
+        jSeparator13.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtReturnPrice.setBackground(new java.awt.Color(0, 255, 255));
+        txtReturnPrice.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtReturnPrice.setForeground(new java.awt.Color(255, 255, 255));
+        txtReturnPrice.setBorder(null);
+        txtReturnPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReturnPriceActionPerformed(evt);
+            }
+        });
+
+        btnReturnMovie.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        btnReturnMovie.setForeground(new java.awt.Color(0, 102, 102));
+        btnReturnMovie.setText("Return Movie");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnReturnMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel44)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel48)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator12, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(txtReturnTitle)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel49)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator13, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(txtReturnPrice)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator11)
+                                    .addComponent(txtReturnCategory))))))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44)
+                .addGap(15, 15, 15)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(txtReturnTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel49)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(txtReturnPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtReturnCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnReturnMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel7.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 2, true));
+
+        jLabel46.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel46.setText("Rent movie");
+
+        btnRentMovie.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        btnRentMovie.setForeground(new java.awt.Color(0, 102, 102));
+        btnRentMovie.setText("Rent Movie");
+
+        tblDisplayRentalMovies.setBorder(null);
+        tblDisplayRentalMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        tblDisplayRentalMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title", "Category", "New release", "Price", "Available"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tblDisplayRentalMovies);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel46)
+                .addGap(233, 233, 233))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRentMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRentMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                    .addContainerGap(36, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(56, 56, 56)))
+        );
+
+        javax.swing.GroupLayout pnlRentLayout = new javax.swing.GroupLayout(pnlRent);
+        pnlRent.setLayout(pnlRentLayout);
+        pnlRentLayout.setHorizontalGroup(
+            pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRentLayout.createSequentialGroup()
+                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(txtDisplayCustomerName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator10)
+                            .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlRentLayout.createSequentialGroup()
+                                .addComponent(jLabel41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbSelectCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 198, Short.MAX_VALUE))
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnlRentLayout.setVerticalGroup(
+            pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbSelectCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43))
+                .addGap(18, 18, 18)
+                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel41)
+                                .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        pnlHome.add(pnlRent, "card8");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 423, Short.MAX_VALUE))
+                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
         setSize(new java.awt.Dimension(963, 610));
@@ -448,6 +1586,14 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnDelete);
         resetColor(btnRent);
         resetColor(btnSearch);
+        
+        pnlAdd.setVisible(true);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnAddMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -458,7 +1604,15 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnAvailableMovies);
         resetColor(btnCustomers);
         resetColor(btnRent);
-        resetColor(btnSearch);
+        resetColor(btnSearch);        
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(true);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnDeleteMouseClicked
 
     private void btnAllMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAllMoviesMouseClicked
@@ -470,6 +1624,14 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnCustomers);
         resetColor(btnRent);
         resetColor(btnSearch);
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(true);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnAllMoviesMouseClicked
 
     private void btnAvailableMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvailableMoviesMouseClicked
@@ -481,6 +1643,14 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnCustomers);
         resetColor(btnRent);
         resetColor(btnSearch);
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(true);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnAvailableMoviesMouseClicked
 
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
@@ -492,6 +1662,14 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnCustomers);
         resetColor(btnRent);
         resetColor(btnAvailableMovies);
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(true);
     }//GEN-LAST:event_btnSearchMouseClicked
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
@@ -503,6 +1681,14 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnSearch);
         resetColor(btnRent);
         resetColor(btnAvailableMovies);
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(true);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(false);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnCustomersMouseClicked
 
     private void btnRentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRentMouseClicked
@@ -514,7 +1700,83 @@ public class DvdRental extends javax.swing.JFrame {
         resetColor(btnSearch);
         resetColor(btnCustomers);
         resetColor(btnAvailableMovies);
+                
+        pnlAdd.setVisible(false);
+        pnlAllMovies.setVisible(false);
+        pnlAvailableMovies.setVisible(false);
+        pnlCustomer.setVisible(false);
+        pnlDelete.setVisible(false);
+        pnlRent.setVisible(true);
+        pnlSearch.setVisible(false);
     }//GEN-LAST:event_btnRentMouseClicked
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSurnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSurnameActionPerformed
+
+    private void txtCreditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCreditActionPerformed
+
+    private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneNumberActionPerformed
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTitleActionPerformed
+
+    private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteCustomerActionPerformed
+
+    private void btnDeleteMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteMovieActionPerformed
+
+    private void btnSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchMovieActionPerformed
+
+    private void txtSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchMovieActionPerformed
+
+    private void txtAvailableBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAvailableBalanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAvailableBalanceActionPerformed
+
+    private void txtDisplayCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDisplayCustomerNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDisplayCustomerNameActionPerformed
+
+    private void txtDisplayCutomerSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDisplayCutomerSurnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDisplayCutomerSurnameActionPerformed
+
+    private void txtReturnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReturnCategoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReturnCategoryActionPerformed
+
+    private void txtReturnTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReturnTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReturnTitleActionPerformed
+
+    private void txtReturnPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReturnPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReturnPriceActionPerformed
+
+    private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddMovieActionPerformed
 
     //This method will set/change the backgroup color of a panel to the specified color
     public void setColor(JPanel panel){
@@ -528,13 +1790,13 @@ public class DvdRental extends javax.swing.JFrame {
     
     /**
      * @param args the command line arguments
-     *
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         *
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
@@ -550,25 +1812,35 @@ public class DvdRental extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(DvdRental.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DvdRental.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }*/
+        }
         //</editor-fold>
 
-        /* Create and display the form *
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DvdRental().setVisible(true);
             }
         });
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnAdd;
+    private javax.swing.JButton btnAddCustomer;
+    private javax.swing.JButton btnAddMovie;
     private javax.swing.JPanel btnAllMovies;
     private javax.swing.JPanel btnAvailableMovies;
     private javax.swing.JPanel btnCustomers;
     private javax.swing.JPanel btnDelete;
+    private javax.swing.JButton btnDeleteCustomer;
+    private javax.swing.JButton btnDeleteMovie;
     private javax.swing.JPanel btnRent;
+    private javax.swing.JButton btnRentMovie;
+    private javax.swing.JButton btnReturnMovie;
     private javax.swing.JPanel btnSearch;
+    private javax.swing.JButton btnSearchMovie;
+    private javax.swing.JComboBox<String> cmbCategory;
+    private javax.swing.JComboBox<String> cmbNewRelease;
+    private javax.swing.JComboBox<String> cmbSelectCustomer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -583,15 +1855,93 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JLabel lblDisplayCategoryPicture;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JPanel pnlAdd;
+    private javax.swing.JPanel pnlAllMovies;
+    private javax.swing.JPanel pnlAvailableMovies;
+    private javax.swing.JPanel pnlCustomer;
+    private javax.swing.JPanel pnlDelete;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlHeaderWords;
+    private javax.swing.JPanel pnlHome;
+    private javax.swing.JPanel pnlRent;
+    private javax.swing.JPanel pnlSearch;
+    private javax.swing.JTable tblDisplayAllCustomers;
+    private javax.swing.JTable tblDisplayAllMovies;
+    private javax.swing.JTable tblDisplayAvailableMovies;
+    private javax.swing.JTable tblDisplayCustomers;
+    private javax.swing.JTable tblDisplayMovies;
+    private javax.swing.JTable tblDisplayRentalMovies;
+    private javax.swing.JTable tblDisplaySearchedMovies;
+    private javax.swing.JTextField txtAvailableBalance;
+    private javax.swing.JTextField txtCredit;
+    private javax.swing.JTextField txtDisplayCustomerName;
+    private javax.swing.JTextField txtDisplayCutomerSurname;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPhoneNumber;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtReturnCategory;
+    private javax.swing.JTextField txtReturnPrice;
+    private javax.swing.JTextField txtReturnTitle;
+    private javax.swing.JTextField txtSearchMovie;
+    private javax.swing.JTextField txtSurname;
+    private javax.swing.JTextField txtTitle;
     // End of variables declaration//GEN-END:variables
 }
