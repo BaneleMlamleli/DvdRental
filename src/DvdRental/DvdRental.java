@@ -600,6 +600,11 @@ public class DvdRental extends javax.swing.JFrame {
         btnAddCustomer.setForeground(new java.awt.Color(255, 51, 51));
         btnAddCustomer.setText("Add customer");
         btnAddCustomer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCustomerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -737,7 +742,7 @@ public class DvdRental extends javax.swing.JFrame {
         });
 
         cmbNewRelease.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        cmbNewRelease.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        cmbNewRelease.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
         cmbNewRelease.setBorder(null);
 
         jLabel36.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
@@ -1766,6 +1771,28 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
         // TODO add your handling code here:
+        String title = txtTitle.getText();
+        String price = txtPrice.getText();
+        String category = cmbCategory.getSelectedItem().toString();
+        String newRelease = cmbNewRelease.getSelectedItem().toString();
+        
+        if(price.length() != 0){
+            if(Double.parseDouble(price) >= 1){
+                if(title.length() != 0){
+                    Dvd objDvd = new Dvd(title, category, Boolean.parseBoolean(newRelease), true);                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error\nTitle field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be zero","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        //JOptionPane.showMessageDialog(null, "Movie successfully added","Success",JOptionPane.INFORMATION_MESSAGE);
+        txtTitle.setText("");
+        
     }//GEN-LAST:event_btnAddMovieActionPerformed
 
     private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
@@ -1788,6 +1815,32 @@ public class DvdRental extends javax.swing.JFrame {
         Image image = icon.getImage().getScaledInstance(lblDisplayCategoryPicture.getWidth(), lblDisplayCategoryPicture.getHeight(), Image.SCALE_SMOOTH);
         lblDisplayCategoryPicture.setIcon(new ImageIcon(image));
     }//GEN-LAST:event_cmbCategoryMouseClicked
+
+    private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
+        String name = txtName.getText();
+        String surname = txtSurname.getText();
+        String phoneNumber = txtPhoneNumber.getText();
+        double credit = Double.parseDouble(txtCredit.getText());
+        
+        if(name.length() != 0){
+            if(surname.length() != 0){
+                if(phoneNumber.length() != 0){
+                    Customer objCustomer = new Customer(name, surname, phoneNumber, credit, true);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error\nPhone number must be ten digits","Error",JOptionPane.ERROR_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Error\nSurname field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error\nName field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        //JOptionPane.showMessageDialog(null, "Customer successfully added","Success",JOptionPane.INFORMATION_MESSAGE);
+        txtName.setText("");
+        txtSurname.setText("");
+        txtPhoneNumber.setText("");
+    }//GEN-LAST:event_btnAddCustomerActionPerformed
 
     //This method will set/change the backgroup color of a panel to the specified color
     public void setColor(JPanel panel){
