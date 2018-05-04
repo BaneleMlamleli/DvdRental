@@ -1781,12 +1781,10 @@ public class DvdRental extends javax.swing.JFrame {
             if (imageList1.equalsIgnoreCase(cmbCategory.getSelectedItem().toString()+".jpg")) {
                 imageName = imageList1;
                 break;
-            } else {
-                JOptionPane.showMessageDialog(null, imageList1+", Error, no image for this category");
             }
         }
-        JOptionPane.showMessageDialog(null, imageName);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Images") + imageName);
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Images/"+imageName));
         Image image = icon.getImage().getScaledInstance(lblDisplayCategoryPicture.getWidth(), lblDisplayCategoryPicture.getHeight(), Image.SCALE_SMOOTH);
         lblDisplayCategoryPicture.setIcon(new ImageIcon(image));
     }//GEN-LAST:event_cmbCategoryMouseClicked
