@@ -6,7 +6,9 @@
 package DvdRental;
 
 import java.awt.Color;
-import javax.swing.JPanel;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.*;
 
 /**
  *
@@ -703,7 +705,6 @@ public class DvdRental extends javax.swing.JFrame {
         lblDisplayCategoryPicture.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
         lblDisplayCategoryPicture.setForeground(new java.awt.Color(0, 102, 102));
         lblDisplayCategoryPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDisplayCategoryPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Movie Projector_96px.png"))); // NOI18N
         lblDisplayCategoryPicture.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel39.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
@@ -729,6 +730,11 @@ public class DvdRental extends javax.swing.JFrame {
         cmbCategory.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horror", "Sci-fi", "Drama", "Romance", "Comedy", "Action", "Cartoon", " " }));
         cmbCategory.setBorder(null);
+        cmbCategory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmbCategoryMouseClicked(evt);
+            }
+        });
 
         cmbNewRelease.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         cmbNewRelease.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
@@ -1718,10 +1724,6 @@ public class DvdRental extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
 
-    private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTitleActionPerformed
-
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
@@ -1765,6 +1767,29 @@ public class DvdRental extends javax.swing.JFrame {
     private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddMovieActionPerformed
+
+    private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTitleActionPerformed
+
+    private void cmbCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbCategoryMouseClicked
+        File file = new File(getClass().getResource("/Images").getFile());
+        String[] imageList = file.list();
+        //-----------------------------
+        String imageName = "";
+        for (String imageList1 : imageList) {
+            if (imageList1.equalsIgnoreCase(cmbCategory.getSelectedItem().toString()+".jpg")) {
+                imageName = imageList1;
+                break;
+            } else {
+                JOptionPane.showMessageDialog(null, imageList1+", Error, no image for this category");
+            }
+        }
+        JOptionPane.showMessageDialog(null, imageName);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Images") + imageName);
+        Image image = icon.getImage().getScaledInstance(lblDisplayCategoryPicture.getWidth(), lblDisplayCategoryPicture.getHeight(), Image.SCALE_SMOOTH);
+        lblDisplayCategoryPicture.setIcon(new ImageIcon(image));
+    }//GEN-LAST:event_cmbCategoryMouseClicked
 
     //This method will set/change the backgroup color of a panel to the specified color
     public void setColor(JPanel panel){
@@ -1860,7 +1885,6 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
@@ -1875,7 +1899,6 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
