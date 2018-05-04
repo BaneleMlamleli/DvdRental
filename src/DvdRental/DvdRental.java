@@ -734,11 +734,16 @@ public class DvdRental extends javax.swing.JFrame {
         jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
 
         cmbCategory.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        cmbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horror", "Sci-fi", "Drama", "Romance", "Comedy", "Action", "Cartoon", " " }));
+        cmbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horror", "Sci-fi", "Drama", "Romance", "Comedy", "Action", "Cartoon" }));
         cmbCategory.setBorder(null);
         cmbCategory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbCategoryMouseClicked(evt);
+            }
+        });
+        cmbCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCategoryActionPerformed(evt);
             }
         });
 
@@ -1568,7 +1573,7 @@ public class DvdRental extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlHome, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1811,20 +1816,7 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTitleActionPerformed
 
     private void cmbCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbCategoryMouseClicked
-        File file = new File(getClass().getResource("/Images").getFile());
-        String[] imageList = file.list();
-        //-----------------------------
-        String imageName = "";
-        for (String imageList1 : imageList) {
-            if (imageList1.equalsIgnoreCase(cmbCategory.getSelectedItem().toString()+".jpg")) {
-                imageName = imageList1;
-                break;
-            }
-        }
-        
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Images/"+imageName));
-        Image image = icon.getImage().getScaledInstance(lblDisplayCategoryPicture.getWidth(), lblDisplayCategoryPicture.getHeight(), Image.SCALE_SMOOTH);
-        lblDisplayCategoryPicture.setIcon(new ImageIcon(image));
+
     }//GEN-LAST:event_cmbCategoryMouseClicked
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
@@ -1852,6 +1844,23 @@ public class DvdRental extends javax.swing.JFrame {
         txtSurname.setText("");
         txtPhoneNumber.setText("");
     }//GEN-LAST:event_btnAddCustomerActionPerformed
+
+    private void cmbCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoryActionPerformed
+        File file = new File(getClass().getResource("/Images").getFile());
+        String[] imageList = file.list();
+        //-----------------------------
+        String imageName = "";
+        for (String imageList1 : imageList) {
+            if (imageList1.equalsIgnoreCase(cmbCategory.getSelectedItem().toString()+".jpg")) {
+                imageName = imageList1;
+                break;
+            }
+        }
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Images/"+imageName));
+        Image image = icon.getImage().getScaledInstance(lblDisplayCategoryPicture.getWidth(), lblDisplayCategoryPicture.getHeight(), Image.SCALE_SMOOTH);
+        lblDisplayCategoryPicture.setIcon(new ImageIcon(image));
+    }//GEN-LAST:event_cmbCategoryActionPerformed
 
     //This method will set/change the backgroup color of a panel to the specified color
     public void setColor(JPanel panel){
