@@ -149,6 +149,7 @@ public class DvdRental extends javax.swing.JFrame {
         btnRentMovie = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblDisplayRentalMovies = new javax.swing.JTable();
+        jLabel42 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DVD Rental");
@@ -797,9 +798,9 @@ public class DvdRental extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblDisplayCategoryPicture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDisplayCategoryPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel33)
@@ -827,8 +828,7 @@ public class DvdRental extends javax.swing.JFrame {
                                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(30, 30, 30)
                         .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addGap(16, 16, 16))
+                        .addGap(17, 17, 17))))
         );
 
         jTabbedPane1.addTab("Movie", jPanel2);
@@ -1162,16 +1162,13 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane5)
                     .addGroup(pnlSearchLayout.createSequentialGroup()
-                        .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlSearchLayout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSearchMovie))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSearchLayout.createSequentialGroup()
-                                .addGap(0, 137, Short.MAX_VALUE)
-                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(102, 102, 102)
-                        .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel34)
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         pnlSearchLayout.setVerticalGroup(
@@ -1473,7 +1470,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRentMovie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1488,39 +1485,44 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        jLabel42.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel42.setText("Available balance");
+
         javax.swing.GroupLayout pnlRentLayout = new javax.swing.GroupLayout(pnlRent);
         pnlRent.setLayout(pnlRentLayout);
         pnlRentLayout.setHorizontalGroup(
             pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRentLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRentLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                            .addComponent(txtDisplayCustomerName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator10)
-                            .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlRentLayout.createSequentialGroup()
-                                .addComponent(jLabel41)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(pnlRentLayout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(jLabel43)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbSelectCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlRentLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                            .addComponent(jSeparator9))
+                        .addGap(45, 45, 45)
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlRentLayout.createSequentialGroup()
+                                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSeparator10)
+                                    .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtAvailableBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                    .addComponent(jSeparator8)))
+                            .addGroup(pnlRentLayout.createSequentialGroup()
+                                .addComponent(jLabel43)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbSelectCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         pnlRentLayout.setVerticalGroup(
@@ -1533,25 +1535,30 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRentLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlRentLayout.createSequentialGroup()
                         .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel41)
-                                .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                            .addGroup(pnlRentLayout.createSequentialGroup()
+                                .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlRentLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRentLayout.createSequentialGroup()
+                                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRentLayout.createSequentialGroup()
+                        .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel42))
+                        .addGap(15, 15, 15)))
+                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pnlHome.add(pnlRent, "card8");
@@ -1730,15 +1737,19 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPriceActionPerformed
 
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
-        // TODO add your handling code here:
+        // Delete selected customer
+        tblDisplayCustomers.getSelectedColumn();
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
     private void btnDeleteMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMovieActionPerformed
-        // TODO add your handling code here:
+        // Delete selected movie
+        tblDisplayMovies.getSelectedColumn();
     }//GEN-LAST:event_btnDeleteMovieActionPerformed
 
     private void btnSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMovieActionPerformed
-        // TODO add your handling code here:
+        // Search and display all the movies that start with the entered word
+        String searchWord = txtSearchMovie.getText();
+        //tblDisplaySearchedMovies
     }//GEN-LAST:event_btnSearchMovieActionPerformed
 
     private void txtSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchMovieActionPerformed
@@ -1852,6 +1863,21 @@ public class DvdRental extends javax.swing.JFrame {
         panel.setBackground(new Color(0,0,152));
     }
     
+    //Displaying all movies
+    public void displayAllMovies(){
+        //tblDisplayAllMovies
+    }
+    
+    //Displaying all available movies for rental
+    public void displayAvailableMovies(){
+        //tblDisplayAvailableMovies
+    }
+    
+    //Display all customers in the system
+    public void displayAllCustomers(){
+        //tblDisplayAllCustomers
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1934,6 +1960,7 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel46;

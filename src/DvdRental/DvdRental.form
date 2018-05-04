@@ -1137,8 +1137,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="32" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="lblDisplayCategoryPicture" alignment="1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblDisplayCategoryPicture" alignment="0" min="-2" pref="332" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
@@ -1174,10 +1174,9 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnAddMovie" min="-2" pref="76" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1769,19 +1768,14 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jScrollPane5" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtSearchMovie" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
-                                      <Component id="jSeparator7" min="-2" pref="382" max="-2" attributes="0"/>
-                                  </Group>
+                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jSeparator7" min="-2" pref="382" max="-2" attributes="0"/>
+                                  <Component id="txtSearchMovie" min="-2" pref="383" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                              <Component id="btnSearchMovie" min="-2" pref="317" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="btnSearchMovie" min="-2" pref="374" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1994,40 +1988,42 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jSeparator9" pref="263" max="32767" attributes="0"/>
-                                  <Component id="txtDisplayCustomerName" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jSeparator10" max="32767" attributes="0"/>
-                                  <Component id="txtDisplayCutomerSurname" min="-2" pref="273" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jSeparator8" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtAvailableBalance" min="-2" pref="291" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
-                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cmbSelectCustomer" min="-2" pref="311" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jPanel7" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtDisplayCustomerName" pref="231" max="32767" attributes="0"/>
+                                  <Component id="jSeparator9" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jSeparator10" max="32767" attributes="0"/>
+                                          <Component id="txtDisplayCutomerSurname" min="-2" pref="273" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtAvailableBalance" pref="181" max="32767" attributes="0"/>
+                                          <Component id="jSeparator8" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cmbSelectCustomer" min="-2" pref="311" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -2044,33 +2040,41 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="txtDisplayCustomerName" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                              <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtAvailableBalance" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtAvailableBalance" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator8" min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="txtDisplayCutomerSurname" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="jSeparator9" min="-2" pref="7" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtDisplayCutomerSurname" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Component id="txtDisplayCustomerName" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jSeparator8" min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel7" min="-2" pref="305" max="-2" attributes="0"/>
                           <Component id="jPanel5" max="32767" attributes="0"/>
-                          <Component id="jPanel7" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2452,7 +2456,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnRentMovie" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jScrollPane7" alignment="0" pref="584" max="32767" attributes="0"/>
+                              <Component id="jScrollPane7" alignment="0" pref="604" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2525,6 +2529,17 @@
                 </Container>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="jLabel42">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Cooper Black" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Available balance"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
