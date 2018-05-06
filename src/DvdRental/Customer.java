@@ -5,8 +5,9 @@
  */
 package DvdRental;
 
+import java.util.ArrayList;
+
 /**
- *
  * @author Banele Mlamleli
  * @author Nelson Mpyana
  */
@@ -71,5 +72,5 @@ public class Customer {
     @Override
     public String toString(){
         return "";
-    }    
+    }
 }

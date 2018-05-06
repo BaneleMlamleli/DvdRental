@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package DvdRental;
-
 /**
- *
- * @author Shaun
+ * @author Banele Mlamleli
+ * @author Nelson Mpyana
  */
 public class SplashScreen extends javax.swing.JFrame {
 

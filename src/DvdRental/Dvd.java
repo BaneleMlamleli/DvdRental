@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package DvdRental;
-
 /**
- *
  * @author Banele Mlamleli
  * @author Nelson Mpyana
  */
