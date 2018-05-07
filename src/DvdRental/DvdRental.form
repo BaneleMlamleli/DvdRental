@@ -1493,32 +1493,12 @@
                               <Color blue="99" green="99" red="0" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="5" rowCount="3">
-                                <Column editable="false" title="Name" type="java.lang.String">
-                                  <Data value="Banele"/>
-                                  <Data value="Seth"/>
-                                  <Data value="Tania"/>
-                                </Column>
-                                <Column editable="false" title="Surname" type="java.lang.String">
-                                  <Data value="Mlamleli"/>
-                                  <Data value="Mhlanga"/>
-                                  <Data value="Mhlanga"/>
-                                </Column>
-                                <Column editable="false" title="Phone number" type="java.lang.String">
-                                  <Data value="567890455"/>
-                                  <Data value="1234567890"/>
-                                  <Data value="0987654321"/>
-                                </Column>
-                                <Column editable="false" title="Credit" type="java.lang.String">
-                                  <Data value="90"/>
-                                  <Data value="65"/>
-                                  <Data value="45"/>
-                                </Column>
-                                <Column editable="false" title="Can rent?" type="java.lang.String">
-                                  <Data value="true"/>
-                                  <Data value="false"/>
-                                  <Data value="true"/>
-                                </Column>
+                              <Table columnCount="5" rowCount="0">
+                                <Column editable="false" title="Name" type="java.lang.String"/>
+                                <Column editable="false" title="Surname" type="java.lang.String"/>
+                                <Column editable="false" title="Phone number" type="java.lang.String"/>
+                                <Column editable="false" title="Credit" type="java.lang.String"/>
+                                <Column editable="false" title="Can rent?" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1595,32 +1575,12 @@
                               <Color blue="99" green="99" red="0" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="5" rowCount="3">
-                                <Column editable="false" title="Title" type="java.lang.String">
-                                  <Data value="Black Panther"/>
-                                  <Data value="Black Cat"/>
-                                  <Data value="Black Mamba"/>
-                                </Column>
-                                <Column editable="false" title="Category" type="java.lang.String">
-                                  <Data value="Sci-Fi"/>
-                                  <Data value="Action"/>
-                                  <Data value="Horror"/>
-                                </Column>
-                                <Column editable="false" title="New release" type="java.lang.String">
-                                  <Data value="true"/>
-                                  <Data value="false"/>
-                                  <Data value="true"/>
-                                </Column>
-                                <Column editable="false" title="Price" type="java.lang.String">
-                                  <Data value="35"/>
-                                  <Data value="15"/>
-                                  <Data value="20"/>
-                                </Column>
-                                <Column editable="false" title="Available" type="java.lang.String">
-                                  <Data value="false"/>
-                                  <Data value="true"/>
-                                  <Data value="false"/>
-                                </Column>
+                              <Table columnCount="5" rowCount="0">
+                                <Column editable="false" title="Title" type="java.lang.String"/>
+                                <Column editable="false" title="Category" type="java.lang.String"/>
+                                <Column editable="false" title="New release" type="java.lang.String"/>
+                                <Column editable="false" title="Price" type="java.lang.String"/>
+                                <Column editable="false" title="Available" type="java.lang.String"/>
                               </Table>
                             </Property>
                           </Properties>
@@ -1799,6 +1759,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Load available movies"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoadAvailableMoviesActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane8">
               <AuxValues>

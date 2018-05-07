@@ -8,6 +8,7 @@ package DvdRental;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -16,7 +17,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DvdRental extends javax.swing.JFrame {
 
-    MultipurposeClass objMultiClass = new MultipurposeClass();
+    Customer objCustomer = new Customer();
+    Dvd objDvd = new Dvd();
+    
+    ArrayList<Customer> customers = new ArrayList<>();
+    ArrayList<Dvd> dvd = new ArrayList<>();
+    
+    int counterForMovies = 1, counterForCustomers = 1;
+    
     /**
      * Creates new form DvdRental
      */
@@ -879,9 +887,7 @@ public class DvdRental extends javax.swing.JFrame {
         tblDisplayCustomers.setForeground(new java.awt.Color(0, 153, 153));
         tblDisplayCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Banele", "Mlamleli", "567890455", "90", "true"},
-                {"Seth", "Mhlanga", "1234567890", "65", "false"},
-                {"Tania", "Mhlanga", "0987654321", "45", "true"}
+
             },
             new String [] {
                 "Name", "Surname", "Phone number", "Credit", "Can rent?"
@@ -937,9 +943,7 @@ public class DvdRental extends javax.swing.JFrame {
         tblDisplayMovies.setForeground(new java.awt.Color(0, 153, 153));
         tblDisplayMovies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Black Panther", "Sci-Fi", "true", "35", "false"},
-                {"Black Cat", "Action", "false", "15", "true"},
-                {"Black Mamba", "Horror", "true", "20", "false"}
+
             },
             new String [] {
                 "Title", "Category", "New release", "Price", "Available"
@@ -1081,6 +1085,11 @@ public class DvdRental extends javax.swing.JFrame {
         btnLoadAvailableMovies.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         btnLoadAvailableMovies.setForeground(new java.awt.Color(0, 102, 102));
         btnLoadAvailableMovies.setText("Load available movies");
+        btnLoadAvailableMovies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoadAvailableMoviesActionPerformed(evt);
+            }
+        });
 
         tblDisplayAvailableMovies.setBorder(null);
         tblDisplayAvailableMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
@@ -1670,6 +1679,22 @@ public class DvdRental extends javax.swing.JFrame {
         pnlDelete.setVisible(true);
         pnlRent.setVisible(false);
         pnlSearch.setVisible(false);
+        
+        DefaultTableModel displayAllMoviesModel = (DefaultTableModel)tblDisplayMovies.getModel();
+        DefaultTableModel displayAllCustomersModel = (DefaultTableModel)tblDisplayCustomers.getModel();
+        
+        ArrayList<Dvd> allMovies = dvd;
+        for(int i = 0; i < allMovies.size(); i++){
+            displayAllMoviesModel.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+               allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+        }
+        
+        ArrayList<Customer> allCustomers = customers;
+        for(int i = 0; i < allCustomers.size(); i++){
+            displayAllCustomersModel.addRow(new Object[]{allCustomers.get(i).getFirsName(), allCustomers.get(i).getSurname(),
+                allCustomers.get(i).getPhoneNum(), Double.toString(allCustomers.get(i).getCredit()),
+                Boolean.toString(allCustomers.get(i).isCanRent())});
+        }       
     }//GEN-LAST:event_btnDeleteMouseClicked
 
     private void btnAllMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAllMoviesMouseClicked
@@ -1765,6 +1790,29 @@ public class DvdRental extends javax.swing.JFrame {
         pnlDelete.setVisible(false);
         pnlRent.setVisible(true);
         pnlSearch.setVisible(false);
+        
+        // Load and display all the available movies
+        DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();        
+        if(tblDisplayRentalMovies.getRowCount() == 0){
+            ArrayList<Dvd> allMovies = dvd;
+            for (int i = 0; i < allMovies.size(); i++) {
+                if (allMovies.get(i).isAvailableForRental()) {
+                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+                }
+            }
+        }else{
+            model.removeRow(model.getRowCount());
+        }
+
+        if(cmbSelectCustomer.getItemCount() == 0){
+            ArrayList<Customer> allCustomers = customers;
+            for (int i = 0; i < allCustomers.size(); i++) {
+                cmbSelectCustomer.addItem(allCustomers.get(i).getPhoneNum());
+            }
+        }else{
+            cmbSelectCustomer.removeAllItems();
+        }
     }//GEN-LAST:event_btnRentMouseClicked
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -1800,19 +1848,6 @@ public class DvdRental extends javax.swing.JFrame {
         if(confirm == 0){
             model.removeRow(tblDisplayCustomers.getSelectedRow());
         }
-        
-        
-        /*model.addRow(new Object[]{displayAll.getString("Name"), objEncryptDecrypt.getDecryption(displayAll.getString("Password")),
-                    objEncryptDecrypt.getDecryption(displayAll.getString("Old_Password")), displayAll.getString("URL")});
-        ***********************
-        DefaultTableModel model = (DefaultTableModel) tblDisplayEmployeeEntry.getModel();
-        txtEditStartTime.setText(model.getValueAt(tblDisplayEmployeeEntry.getSelectedRow(), 1).toString());
-        txtEditEndTime.setText(model.getValueAt(tblDisplayEmployeeEntry.getSelectedRow(), 2).toString());        
-        txtEditDate.setText(model.getValueAt(tblDisplayEmployeeEntry.getSelectedRow(), 0).toString());
-        txtEditActivity.setText(model.getValueAt(tblDisplayEmployeeEntry.getSelectedRow(), 3).toString());
-        lblTimesheet_ID.setText(model.getValueAt(tblDisplayEmployeeEntry.getSelectedRow(), 4).toString());
-        */
-        
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
     private void btnDeleteMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMovieActionPerformed
@@ -1866,27 +1901,37 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
         // TODO add your handling code here:
-        String title = txtTitle.getText();
-        String price = txtPrice.getText();
-        String category = cmbCategory.getSelectedItem().toString();
-        String newRelease = cmbNewRelease.getSelectedItem().toString();
-        
-        if(price.length() != 0){
-            if(Double.parseDouble(price) >= 1){
-                if(title.length() != 0){
-                    Dvd objDvd = new Dvd(title, category, Boolean.parseBoolean(newRelease), true);                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Error\nTitle field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+        try{
+            String title = txtTitle.getText();
+            String price = txtPrice.getText();
+            String category = cmbCategory.getSelectedItem().toString();
+            String newRelease = cmbNewRelease.getSelectedItem().toString();
+
+            if(counterForMovies <= 10){
+                if (price.length() != 0) {
+                    if (Double.parseDouble(price) >= 1) {
+                        if (title.length() != 0) {
+                            dvd.add(new Dvd(title, category, Double.parseDouble(price), Boolean.parseBoolean(newRelease), true));
+                            JOptionPane.showMessageDialog(null, title+" has been added", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error\nTitle field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be zero", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                counterForMovies++;
             }else{
-                JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be zero","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "You have reached the amount of\n"+
+                        "movies that can be added!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+        }catch(NumberFormatException error){
+            JOptionPane.showMessageDialog(rootPane, "Error!\nPrice must be a number", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        //JOptionPane.showMessageDialog(null, "Movie successfully added","Success",JOptionPane.INFORMATION_MESSAGE);
         txtTitle.setText("");
+        txtPrice.setText("");
         
     }//GEN-LAST:event_btnAddMovieActionPerformed
 
@@ -1899,27 +1944,36 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbCategoryMouseClicked
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
-        String name = txtName.getText();
-        String surname = txtSurname.getText();
-        String phoneNumber = txtPhoneNumber.getText();
-        double credit = Double.parseDouble(txtCredit.getText());
-        
-        if(name.length() != 0){
-            if(surname.length() != 0){
-                if(phoneNumber.length() != 0){
-                    Customer objCustomer = new Customer(name, surname, phoneNumber, credit, true);
-                    JOptionPane.showMessageDialog(rootPane, name+" has been added!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                }else{
-                    JOptionPane.showMessageDialog(null, "Error\nPhone number must be ten digits","Error",JOptionPane.ERROR_MESSAGE);
+        try{
+            String name = txtName.getText();
+            String surname = txtSurname.getText();
+            String phoneNumber = txtPhoneNumber.getText();
+            double credit = Double.parseDouble(txtCredit.getText());
+
+            if(counterForCustomers <= 10){
+                if (name.length() != 0) {
+                    if (surname.length() != 0) {
+                        if (!(phoneNumber.length() != 10)) {
+                            customers.add(new Customer(name, surname, phoneNumber, credit, true));
+                            JOptionPane.showMessageDialog(rootPane, name + " has been added!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error\nPhone number must be ten digits", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error\nSurname field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error\nName field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                counterForCustomers++;
             }else{
-                JOptionPane.showMessageDialog(null, "Error\nSurname field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "You have reached amount of\n"+
+                        "customers that can be added!", "Warning!", JOptionPane.WARNING_MESSAGE);
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Error\nName field cannot be left empty","Error",JOptionPane.ERROR_MESSAGE);
+        }catch(NumberFormatException error){
+            JOptionPane.showMessageDialog(rootPane, "Error!\nPhone number must be a digits", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        //JOptionPane.showMessageDialog(null, "Customer successfully added","Success",JOptionPane.INFORMATION_MESSAGE);
         txtName.setText("");
         txtSurname.setText("");
         txtPhoneNumber.setText("");
@@ -1943,13 +1997,37 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbCategoryActionPerformed
 
     private void btnLoadAllMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAllMoviesActionPerformed
-        // TODO add your handling code here:
+        // Load and display all the movies
+        DefaultTableModel model = (DefaultTableModel)tblDisplayAllMovies.getModel();
+        ArrayList<Dvd> allMovies = dvd;
+        for(int i = 0; i < allMovies.size(); i++){
+            model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+               allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+        }
     }//GEN-LAST:event_btnLoadAllMoviesActionPerformed
 
     private void btnLoadAllCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAllCustomersActionPerformed
-        // Load all customers
-        
+        // Load and display all customers
+        DefaultTableModel model = (DefaultTableModel)tblDisplayAllCustomers.getModel();
+        ArrayList<Customer> allCustomers = customers;
+        for(int i = 0; i < allCustomers.size(); i++){
+            model.addRow(new Object[]{allCustomers.get(i).getFirsName(), allCustomers.get(i).getSurname(),
+                allCustomers.get(i).getPhoneNum(), Double.toString(allCustomers.get(i).getCredit()),
+                Boolean.toString(allCustomers.get(i).isCanRent())});
+        }
     }//GEN-LAST:event_btnLoadAllCustomersActionPerformed
+
+    private void btnLoadAvailableMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAvailableMoviesActionPerformed
+        // Load and display all the available movies
+        DefaultTableModel model = (DefaultTableModel)tblDisplayAvailableMovies.getModel();
+        ArrayList<Dvd> allMovies = dvd;
+        for(int i = 0; i < allMovies.size(); i++){
+            if(allMovies.get(i).isAvailableForRental()){
+                model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+                    allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+            }
+        }
+    }//GEN-LAST:event_btnLoadAvailableMoviesActionPerformed
 
     //This method will set/change the backgroup color of a panel to the specified color
     public void setColor(JPanel panel){

@@ -18,10 +18,11 @@ public class Dvd {
     
     public Dvd(){}
     
-    public Dvd(String title,  String category, boolean newRelease, boolean avail){
+    public Dvd(String title,  String category, double price, boolean newRelease, boolean avail){
         this.title = title;
         this.category = category;
         this.newRelease = newRelease;
+        this.price = price;
         availableForRental = avail;
     }
 
