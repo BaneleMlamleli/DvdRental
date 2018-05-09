@@ -247,6 +247,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnRent.setBackground(new java.awt.Color(0, 0, 152));
         btnRent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRent.setToolTipText("Rent and return a movie");
         btnRent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRentMouseClicked(evt);
@@ -289,6 +290,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnCustomers.setBackground(new java.awt.Color(0, 0, 152));
         btnCustomers.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCustomers.setToolTipText("Sorted list of customers");
         btnCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCustomersMouseClicked(evt);
@@ -328,6 +330,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnSearch.setBackground(new java.awt.Color(0, 0, 152));
         btnSearch.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSearch.setToolTipText("Search movies that start with the entered key word");
         btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSearchMouseClicked(evt);
@@ -367,6 +370,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnAllMovies.setBackground(new java.awt.Color(0, 0, 152));
         btnAllMovies.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAllMovies.setToolTipText("Displaying sorted list of all movies ");
         btnAllMovies.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAllMoviesMouseClicked(evt);
@@ -405,6 +409,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnAvailableMovies.setBackground(new java.awt.Color(0, 0, 152));
         btnAvailableMovies.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAvailableMovies.setToolTipText("Displaying sorted available movies ");
         btnAvailableMovies.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAvailableMoviesMouseClicked(evt);
@@ -445,6 +450,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnDelete.setBackground(new java.awt.Color(0, 0, 152));
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDelete.setToolTipText("Delete a customer or a movie");
         btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDeleteMouseClicked(evt);
@@ -485,6 +491,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         btnAdd.setBackground(new java.awt.Color(0, 255, 255));
         btnAdd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAdd.setToolTipText("Add a customer  or a movie");
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddMouseClicked(evt);
@@ -1867,8 +1874,24 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMovieActionPerformed
         // Search and display all the movies that start with the entered word
-        String searchWord = txtSearchMovie.getText();
-        //tblDisplaySearchedMovies
+        String searchWord = txtSearchMovie.getText().toLowerCase();
+        DefaultTableModel model = (DefaultTableModel)tblDisplaySearchedMovies.getModel();
+        ArrayList<Dvd> allMovies = dvd;
+        if(tblDisplaySearchedMovies.getRowCount() == 0){
+            for (int i = 0; i < allMovies.size(); i++) {
+                if (allMovies.get(i).getTitle().contains(searchWord)) {
+                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Sorry, Movie with the entered key word is not found.\n"
+                            + "try again", "Search not found", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                }
+            }
+        }else{
+            tblDisplaySearchedMovies.removeAll();
+        }
     }//GEN-LAST:event_btnSearchMovieActionPerformed
 
     private void txtSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchMovieActionPerformed
@@ -1902,9 +1925,9 @@ public class DvdRental extends javax.swing.JFrame {
     private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
         // TODO add your handling code here:
         try{
-            String title = txtTitle.getText();
+            String title = txtTitle.getText().toLowerCase();
             String price = txtPrice.getText();
-            String category = cmbCategory.getSelectedItem().toString();
+            String category = cmbCategory.getSelectedItem().toString().toLowerCase();
             String newRelease = cmbNewRelease.getSelectedItem().toString();
 
             if(counterForMovies <= 10){
@@ -1945,8 +1968,8 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
         try{
-            String name = txtName.getText();
-            String surname = txtSurname.getText();
+            String name = txtName.getText().toLowerCase();
+            String surname = txtSurname.getText().toLowerCase();
             String phoneNumber = txtPhoneNumber.getText();
             double credit = Double.parseDouble(txtCredit.getText());
 
@@ -1999,10 +2022,16 @@ public class DvdRental extends javax.swing.JFrame {
     private void btnLoadAllMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAllMoviesActionPerformed
         // Load and display all the movies
         DefaultTableModel model = (DefaultTableModel)tblDisplayAllMovies.getModel();
-        ArrayList<Dvd> allMovies = dvd;
-        for(int i = 0; i < allMovies.size(); i++){
-            model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-               allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+        if(tblDisplayAllMovies.getRowCount() == 0){
+            ArrayList<Dvd> allMovies = dvd;
+            for (int i = 0; i < allMovies.size(); i++) {
+                model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+                    allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+            }
+        }else{
+            if(tblDisplayAllMovies.getRowCount() >= 1){
+                tblDisplayAllMovies.removeAll();
+            }
         }
     }//GEN-LAST:event_btnLoadAllMoviesActionPerformed
 
@@ -2021,11 +2050,15 @@ public class DvdRental extends javax.swing.JFrame {
         // Load and display all the available movies
         DefaultTableModel model = (DefaultTableModel)tblDisplayAvailableMovies.getModel();
         ArrayList<Dvd> allMovies = dvd;
-        for(int i = 0; i < allMovies.size(); i++){
-            if(allMovies.get(i).isAvailableForRental()){
-                model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-                    allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+        if(tblDisplayAvailableMovies.getRowCount() == 0){
+            for (int i = 0; i < allMovies.size(); i++) {
+                if (allMovies.get(i).isAvailableForRental()) {
+                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
+                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
+                }
             }
+        }else{
+            tblDisplayAvailableMovies.removeAll();
         }
     }//GEN-LAST:event_btnLoadAvailableMoviesActionPerformed
 
@@ -2050,7 +2083,7 @@ public class DvdRental extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
