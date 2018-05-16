@@ -1,12 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DvdRental;
 /**
- * @author Banele Mlamleli
- * @author Nelson Mpyana
+ * Class:       SplashScreen.java
+ * Group:       2A
+ * Author:      Banele Mlamleli
+ *              Nelson Mpyana
+ * Due date:    Fri. 18 May 2018 20:00
  */
 public class SplashScreen extends javax.swing.JFrame {
 

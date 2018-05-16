@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DvdRental;
-
-import java.awt.Color;
-import java.awt.Image;
+/**
+ * Class:       DvdRental.java
+ * Group:       2A
+ * Author:      Banele Mlamleli
+ *              Nelson Mpyana
+ * Due date:    Fri. 18 May 2018 20:00
+ */
+import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-/**
- * @author Banele Mlamleli
- * @author Nelson Mpyana
- */
 public class DvdRental extends javax.swing.JFrame {
 
     Customer objCustomer = new Customer();
@@ -22,12 +19,10 @@ public class DvdRental extends javax.swing.JFrame {
     
     ArrayList<Customer> customers = new ArrayList<>();
     ArrayList<Dvd> dvd = new ArrayList<>();
+    ArrayList<RentMovie> customerRentDetails = new ArrayList();
     
-    int counterForMovies = 1, counterForCustomers = 1;
-    
-    /**
-     * Creates new form DvdRental
-     */
+    int amountOfMoviesAdded = 1;
+    int amountOfCustomersAdded = 1;
     
     public DvdRental() {
         initComponents();
@@ -106,6 +101,10 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         txtTitle = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        txtPriceAddition = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
         pnlDelete = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -118,12 +117,12 @@ public class DvdRental extends javax.swing.JFrame {
         btnDeleteMovie = new javax.swing.JButton();
         pnlAllMovies = new javax.swing.JPanel();
         btnLoadAllMovies = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        tblDisplayAllMovies = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtDisplayAllMovies = new javax.swing.JTextArea();
         pnlAvailableMovies = new javax.swing.JPanel();
         btnLoadAvailableMovies = new javax.swing.JButton();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tblDisplayAvailableMovies = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtDisplayAvailableMovies = new javax.swing.JTextArea();
         pnlSearch = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblDisplaySearchedMovies = new javax.swing.JTable();
@@ -133,8 +132,8 @@ public class DvdRental extends javax.swing.JFrame {
         txtSearchMovie = new javax.swing.JTextField();
         pnlCustomer = new javax.swing.JPanel();
         btnLoadAllCustomers = new javax.swing.JButton();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        tblDisplayAllCustomers = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txtDisplayAllCustomers = new javax.swing.JTextArea();
         pnlRent = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         txtAvailableBalance = new javax.swing.JTextField();
@@ -157,6 +156,8 @@ public class DvdRental extends javax.swing.JFrame {
         jSeparator13 = new javax.swing.JSeparator();
         txtReturnPrice = new javax.swing.JTextField();
         btnReturnMovie = new javax.swing.JButton();
+        cmbReturnedMovie = new javax.swing.JComboBox<>();
+        jLabel50 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         btnRentMovie = new javax.swing.JButton();
@@ -581,7 +582,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         txtCredit.setEditable(false);
         txtCredit.setBackground(new java.awt.Color(0, 153, 153));
-        txtCredit.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtCredit.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         txtCredit.setForeground(new java.awt.Color(255, 255, 255));
         txtCredit.setText("100.00");
         txtCredit.setBorder(null);
@@ -644,7 +645,7 @@ public class DvdRental extends javax.swing.JFrame {
                                 .addComponent(jLabel31)
                                 .addComponent(jSeparator4)
                                 .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -665,7 +666,7 @@ public class DvdRental extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -741,9 +742,11 @@ public class DvdRental extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(0, 102, 102));
         jLabel40.setText("R");
 
+        txtPrice.setEditable(false);
         txtPrice.setBackground(new java.awt.Color(0, 153, 153));
-        txtPrice.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        txtPrice.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
         txtPrice.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrice.setText("10.00");
         txtPrice.setBorder(null);
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -770,6 +773,11 @@ public class DvdRental extends javax.swing.JFrame {
         cmbNewRelease.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         cmbNewRelease.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
         cmbNewRelease.setBorder(null);
+        cmbNewRelease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbNewReleaseActionPerformed(evt);
+            }
+        });
 
         jLabel36.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 102, 102));
@@ -787,6 +795,28 @@ public class DvdRental extends javax.swing.JFrame {
 
         jSeparator6.setBackground(new java.awt.Color(255, 255, 255));
 
+        jSeparator14.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtPriceAddition.setEditable(false);
+        txtPriceAddition.setBackground(new java.awt.Color(0, 153, 153));
+        txtPriceAddition.setFont(new java.awt.Font("Cooper Black", 0, 16)); // NOI18N
+        txtPriceAddition.setForeground(new java.awt.Color(255, 255, 255));
+        txtPriceAddition.setText("5.00");
+        txtPriceAddition.setBorder(null);
+        txtPriceAddition.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceAdditionActionPerformed(evt);
+            }
+        });
+
+        jLabel45.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel45.setText("R");
+
+        jLabel51.setFont(new java.awt.Font("Cooper Black", 1, 48)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel51.setText("+");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -802,17 +832,30 @@ public class DvdRental extends javax.swing.JFrame {
                                 .addComponent(jLabel36)
                                 .addComponent(jSeparator6)
                                 .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel33)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel40)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel39)
+                                        .addGap(93, 93, 93))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jSeparator5)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel40)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jLabel51)
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jSeparator14)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel45)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPriceAddition, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnAddMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
@@ -822,7 +865,7 @@ public class DvdRental extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDisplayCategoryPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -850,7 +893,14 @@ public class DvdRental extends javax.swing.JFrame {
                                     .addComponent(jLabel40)
                                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel45)
+                                    .addComponent(txtPriceAddition, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel51))
                         .addGap(30, 30, 30)
                         .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
@@ -926,7 +976,7 @@ public class DvdRental extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -937,7 +987,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -990,7 +1040,7 @@ public class DvdRental extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1001,7 +1051,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1031,36 +1081,13 @@ public class DvdRental extends javax.swing.JFrame {
             }
         });
 
-        tblDisplayAllMovies.setBorder(null);
-        tblDisplayAllMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        tblDisplayAllMovies.setForeground(new java.awt.Color(0, 153, 153));
-        tblDisplayAllMovies.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title", "Category", "New release", "Price", "Available"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDisplayAllMovies.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tblDisplayAllMovies.setGridColor(new java.awt.Color(153, 153, 153));
-        tblDisplayAllMovies.setIntercellSpacing(new java.awt.Dimension(3, 3));
-        jScrollPane10.setViewportView(tblDisplayAllMovies);
+        txtDisplayAllMovies.setEditable(false);
+        txtDisplayAllMovies.setBackground(new java.awt.Color(0, 0, 0));
+        txtDisplayAllMovies.setColumns(20);
+        txtDisplayAllMovies.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        txtDisplayAllMovies.setForeground(new java.awt.Color(0, 255, 0));
+        txtDisplayAllMovies.setRows(5);
+        jScrollPane4.setViewportView(txtDisplayAllMovies);
 
         javax.swing.GroupLayout pnlAllMoviesLayout = new javax.swing.GroupLayout(pnlAllMovies);
         pnlAllMovies.setLayout(pnlAllMoviesLayout);
@@ -1068,21 +1095,21 @@ public class DvdRental extends javax.swing.JFrame {
             pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAllMoviesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAllMoviesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLoadAllMovies)
+                .addComponent(btnLoadAllMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(346, 346, 346))
         );
         pnlAllMoviesLayout.setVerticalGroup(
             pnlAllMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAllMoviesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoadAllMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pnlHome.add(pnlAllMovies, "card4");
@@ -1098,55 +1125,32 @@ public class DvdRental extends javax.swing.JFrame {
             }
         });
 
-        tblDisplayAvailableMovies.setBorder(null);
-        tblDisplayAvailableMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        tblDisplayAvailableMovies.setForeground(new java.awt.Color(0, 153, 153));
-        tblDisplayAvailableMovies.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title", "Category", "New release", "Price", "Available"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDisplayAvailableMovies.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tblDisplayAvailableMovies.setGridColor(new java.awt.Color(153, 153, 153));
-        tblDisplayAvailableMovies.setIntercellSpacing(new java.awt.Dimension(3, 3));
-        jScrollPane8.setViewportView(tblDisplayAvailableMovies);
+        txtDisplayAvailableMovies.setEditable(false);
+        txtDisplayAvailableMovies.setBackground(new java.awt.Color(0, 0, 0));
+        txtDisplayAvailableMovies.setColumns(20);
+        txtDisplayAvailableMovies.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        txtDisplayAvailableMovies.setForeground(new java.awt.Color(0, 255, 0));
+        txtDisplayAvailableMovies.setRows(5);
+        jScrollPane3.setViewportView(txtDisplayAvailableMovies);
 
         javax.swing.GroupLayout pnlAvailableMoviesLayout = new javax.swing.GroupLayout(pnlAvailableMovies);
         pnlAvailableMovies.setLayout(pnlAvailableMoviesLayout);
         pnlAvailableMoviesLayout.setHorizontalGroup(
             pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAvailableMoviesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAvailableMoviesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(328, Short.MAX_VALUE)
                 .addComponent(btnLoadAvailableMovies)
                 .addGap(346, 346, 346))
+            .addGroup(pnlAvailableMoviesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
         );
         pnlAvailableMoviesLayout.setVerticalGroup(
             pnlAvailableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvailableMoviesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoadAvailableMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1240,7 +1244,7 @@ public class DvdRental extends javax.swing.JFrame {
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1257,58 +1261,35 @@ public class DvdRental extends javax.swing.JFrame {
             }
         });
 
-        tblDisplayAllCustomers.setBorder(null);
-        tblDisplayAllCustomers.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        tblDisplayAllCustomers.setForeground(new java.awt.Color(0, 153, 153));
-        tblDisplayAllCustomers.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Surname", "Phone number", "Credit", "Can rent?"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDisplayAllCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tblDisplayAllCustomers.setGridColor(new java.awt.Color(153, 153, 153));
-        tblDisplayAllCustomers.setIntercellSpacing(new java.awt.Dimension(3, 3));
-        jScrollPane11.setViewportView(tblDisplayAllCustomers);
+        txtDisplayAllCustomers.setEditable(false);
+        txtDisplayAllCustomers.setBackground(new java.awt.Color(0, 0, 0));
+        txtDisplayAllCustomers.setColumns(20);
+        txtDisplayAllCustomers.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        txtDisplayAllCustomers.setForeground(new java.awt.Color(0, 255, 0));
+        txtDisplayAllCustomers.setRows(5);
+        jScrollPane6.setViewportView(txtDisplayAllCustomers);
 
         javax.swing.GroupLayout pnlCustomerLayout = new javax.swing.GroupLayout(pnlCustomer);
         pnlCustomer.setLayout(pnlCustomerLayout);
         pnlCustomerLayout.setHorizontalGroup(
             pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCustomerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(368, Short.MAX_VALUE)
                 .addComponent(btnLoadAllCustomers)
                 .addGap(346, 346, 346))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6)
+                .addContainerGap())
         );
         pnlCustomerLayout.setVerticalGroup(
             pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCustomerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoadAllCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pnlHome.add(pnlCustomer, "card7");
@@ -1319,7 +1300,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         txtAvailableBalance.setBackground(new java.awt.Color(0, 255, 255));
         txtAvailableBalance.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        txtAvailableBalance.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvailableBalance.setForeground(new java.awt.Color(0, 102, 102));
         txtAvailableBalance.setBorder(null);
         txtAvailableBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1333,6 +1314,11 @@ public class DvdRental extends javax.swing.JFrame {
 
         cmbSelectCustomer.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         cmbSelectCustomer.setBorder(null);
+        cmbSelectCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbSelectCustomerActionPerformed(evt);
+            }
+        });
 
         jLabel43.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 102, 102));
@@ -1342,7 +1328,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         txtDisplayCustomerName.setBackground(new java.awt.Color(0, 255, 255));
         txtDisplayCustomerName.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        txtDisplayCustomerName.setForeground(new java.awt.Color(255, 255, 255));
+        txtDisplayCustomerName.setForeground(new java.awt.Color(0, 102, 102));
         txtDisplayCustomerName.setBorder(null);
         txtDisplayCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1352,7 +1338,7 @@ public class DvdRental extends javax.swing.JFrame {
 
         txtDisplayCutomerSurname.setBackground(new java.awt.Color(0, 255, 255));
         txtDisplayCutomerSurname.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        txtDisplayCutomerSurname.setForeground(new java.awt.Color(255, 255, 255));
+        txtDisplayCutomerSurname.setForeground(new java.awt.Color(0, 102, 102));
         txtDisplayCutomerSurname.setBorder(null);
         txtDisplayCutomerSurname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1420,6 +1406,23 @@ public class DvdRental extends javax.swing.JFrame {
         btnReturnMovie.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         btnReturnMovie.setForeground(new java.awt.Color(0, 102, 102));
         btnReturnMovie.setText("Return Movie");
+        btnReturnMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnMovieActionPerformed(evt);
+            }
+        });
+
+        cmbReturnedMovie.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        cmbReturnedMovie.setBorder(null);
+        cmbReturnedMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbReturnedMovieActionPerformed(evt);
+            }
+        });
+
+        jLabel50.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel50.setText("Movie");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1431,31 +1434,34 @@ public class DvdRental extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btnReturnMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel44)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel48)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator12, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(txtReturnTitle)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel48)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator12)
+                                    .addComponent(txtReturnTitle)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel49)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator13, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(jSeparator13)
                                     .addComponent(txtReturnPrice)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel47)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator11)
-                                    .addComponent(txtReturnCategory))))))
+                                    .addComponent(txtReturnCategory)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel44))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmbReturnedMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1463,13 +1469,17 @@ public class DvdRental extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel44)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbReturnedMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
                     .addComponent(txtReturnTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel49)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1482,7 +1492,7 @@ public class DvdRental extends javax.swing.JFrame {
                     .addComponent(txtReturnCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturnMovie)
                 .addContainerGap())
         );
@@ -1497,6 +1507,11 @@ public class DvdRental extends javax.swing.JFrame {
         btnRentMovie.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         btnRentMovie.setForeground(new java.awt.Color(0, 102, 102));
         btnRentMovie.setText("Rent Movie");
+        btnRentMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRentMovieActionPerformed(evt);
+            }
+        });
 
         tblDisplayRentalMovies.setBorder(null);
         tblDisplayRentalMovies.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
@@ -1537,7 +1552,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRentMovie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1545,8 +1560,8 @@ public class DvdRental extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel46)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRentMovie)
                 .addGap(15, 15, 15))
@@ -1565,7 +1580,7 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRentLayout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlRentLayout.createSequentialGroup()
                         .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1599,25 +1614,26 @@ public class DvdRental extends javax.swing.JFrame {
                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbSelectCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel43))
-                .addGap(18, 18, 18)
                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRentLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlRentLayout.createSequentialGroup()
                                 .addComponent(txtAvailableBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlRentLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(1, 1, 1)
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRentLayout.createSequentialGroup()
                                 .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addComponent(txtDisplayCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDisplayCutomerSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(2, 2, 2)
+                                .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
+                                    .addComponent(jSeparator9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRentLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(pnlRentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel41)
                             .addComponent(jLabel42))
@@ -1690,18 +1706,26 @@ public class DvdRental extends javax.swing.JFrame {
         DefaultTableModel displayAllMoviesModel = (DefaultTableModel)tblDisplayMovies.getModel();
         DefaultTableModel displayAllCustomersModel = (DefaultTableModel)tblDisplayCustomers.getModel();
         
-        ArrayList<Dvd> allMovies = dvd;
-        for(int i = 0; i < allMovies.size(); i++){
-            displayAllMoviesModel.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-               allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
-        }
+        //The below code will clear the table everytime new information is displayed
+        displayAllMoviesModel.getDataVector().removeAllElements();
+        displayAllMoviesModel.fireTableDataChanged();
         
-        ArrayList<Customer> allCustomers = customers;
-        for(int i = 0; i < allCustomers.size(); i++){
-            displayAllCustomersModel.addRow(new Object[]{allCustomers.get(i).getFirsName(), allCustomers.get(i).getSurname(),
-                allCustomers.get(i).getPhoneNum(), Double.toString(allCustomers.get(i).getCredit()),
-                Boolean.toString(allCustomers.get(i).isCanRent())});
-        }       
+        //The below code will clear the table everytime new information is displayed
+        displayAllCustomersModel.getDataVector().removeAllElements();
+        displayAllCustomersModel.fireTableDataChanged();
+        
+        //populating the table with all movies
+        for (int i = 0; i < dvd.size(); i++) {
+            displayAllMoviesModel.addRow(new Object[]{dvd.get(i).getTitle(), dvd.get(i).getCategory(),
+                dvd.get(i).isNewRelease(), dvd.get(i).getPrice(), dvd.get(i).isAvailableForRental()});
+        }
+
+        //populating the table with all customers
+        for (int i = 0; i < customers.size(); i++) {
+            displayAllCustomersModel.addRow(new Object[]{customers.get(i).getFirsName(), customers.get(i).getSurname(),
+                customers.get(i).getPhoneNum(), Double.toString(customers.get(i).getCredit()),
+                Boolean.toString(customers.get(i).isCanRent())});
+        }
     }//GEN-LAST:event_btnDeleteMouseClicked
 
     private void btnAllMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAllMoviesMouseClicked
@@ -1799,26 +1823,38 @@ public class DvdRental extends javax.swing.JFrame {
         pnlSearch.setVisible(false);
         
         // Load and display all the available movies
-        DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();        
-        if(tblDisplayRentalMovies.getRowCount() == 0){
-            ArrayList<Dvd> allMovies = dvd;
-            for (int i = 0; i < allMovies.size(); i++) {
-                if (allMovies.get(i).isAvailableForRental()) {
-                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
-                }
+        DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();
+        
+        //The below code will clear the table everytime new information is displayed
+        model.getDataVector().removeAllElements();
+        model.fireTableDataChanged();
+        
+        for (int i = 0; i < dvd.size(); i++) {
+            if (dvd.get(i).isAvailableForRental() == true) {
+                model.addRow(new Object[]{dvd.get(i).getTitle(), dvd.get(i).getCategory(),
+                    dvd.get(i).isNewRelease(), dvd.get(i).getPrice(), dvd.get(i).isAvailableForRental()});
             }
-        }else{
-            model.removeRow(model.getRowCount());
         }
 
+        //Add all the customer's phone numbers in the dropbox 
         if(cmbSelectCustomer.getItemCount() == 0){
-            ArrayList<Customer> allCustomers = customers;
-            for (int i = 0; i < allCustomers.size(); i++) {
-                cmbSelectCustomer.addItem(allCustomers.get(i).getPhoneNum());
+            //ArrayList<Customer> allCustomers = customers;
+            for (int i = 0; i < customers.size(); i++) {
+                cmbSelectCustomer.addItem(customers.get(i).getPhoneNum());
             }
         }else{
             cmbSelectCustomer.removeAllItems();
+        }
+        
+        //Adding all the titles movies for all rented movies 
+        if(cmbReturnedMovie.getItemCount() == 0){
+            for (int i = 0; i < dvd.size(); i++) {
+                if(dvd.get(i).isAvailableForRental() == false){
+                    cmbReturnedMovie.addItem(dvd.get(i).getTitle());
+                }
+            }         
+        }else{
+            cmbReturnedMovie.removeAllItems();
         }
     }//GEN-LAST:event_btnRentMouseClicked
 
@@ -1853,7 +1889,12 @@ public class DvdRental extends javax.swing.JFrame {
         int confirm = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to delete "+deletedCustomerName+"'s details?", "Delete customer", JOptionPane.OK_CANCEL_OPTION);
         //0 = okay, 2 = cancel
         if(confirm == 0){
-            model.removeRow(tblDisplayCustomers.getSelectedRow());
+            for(int i = 0; i < customers.size(); i++){
+                if(deletedCustomerPhoneNumber.equals(customers.get(i).getPhoneNum())){
+                    customers.remove(i);
+                    model.removeRow(tblDisplayCustomers.getSelectedRow());
+                }
+            }
         }
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
@@ -1868,7 +1909,12 @@ public class DvdRental extends javax.swing.JFrame {
         int confirm = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to delete selected movie?", "Delete Movie", JOptionPane.OK_CANCEL_OPTION);
         //0 = okay, 2 = cancel
         if(confirm == 0){
-            model.removeRow(tblDisplayMovies.getSelectedRow());
+            for(int i = 0; i < dvd.size(); i++){
+                if(deletedMovieTitle.equals(dvd.get(i).getTitle())){
+                    dvd.remove(i);
+                    model.removeRow(tblDisplayMovies.getSelectedRow());
+                }
+            }
         }
     }//GEN-LAST:event_btnDeleteMovieActionPerformed
 
@@ -1876,21 +1922,24 @@ public class DvdRental extends javax.swing.JFrame {
         // Search and display all the movies that start with the entered word
         String searchWord = txtSearchMovie.getText().toLowerCase();
         DefaultTableModel model = (DefaultTableModel)tblDisplaySearchedMovies.getModel();
-        ArrayList<Dvd> allMovies = dvd;
-        if(tblDisplaySearchedMovies.getRowCount() == 0){
-            for (int i = 0; i < allMovies.size(); i++) {
-                if (allMovies.get(i).getTitle().contains(searchWord)) {
-                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
-                    break;
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Sorry, Movie with the entered key word is not found.\n"
-                            + "try again", "Search not found", JOptionPane.INFORMATION_MESSAGE);
-                    break;
-                }
+        
+        //The below code will clear the table everytime new information is displayed
+        model.getDataVector().removeAllElements();
+        model.fireTableDataChanged();
+
+        int found = 0;
+        for (int i = 0; i < dvd.size(); i++) {
+            if (dvd.get(i).getTitle().contains(searchWord)) {
+                model.addRow(new Object[]{dvd.get(i).getTitle(), dvd.get(i).getCategory(),
+                    dvd.get(i).isNewRelease(), dvd.get(i).getPrice(), dvd.get(i).isAvailableForRental()});
+                found++;
             }
-        }else{
-            tblDisplaySearchedMovies.removeAll();
+        }
+        
+        //displaying an error message if there is not match found
+        if(found == 0){
+            JOptionPane.showMessageDialog(rootPane, "Sorry, Movie with the entered key word is not found.\n"
+                    + "try again", "Search not found", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnSearchMovieActionPerformed
 
@@ -1923,39 +1972,31 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_txtReturnPriceActionPerformed
 
     private void btnAddMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMovieActionPerformed
-        // TODO add your handling code here:
+        // Adding a movie into the arraylist
         try{
             String title = txtTitle.getText().toLowerCase();
-            String price = txtPrice.getText();
+            double strPrice = Double.parseDouble(txtPrice.getText());
+            double additionalPrice = Double.parseDouble(txtPriceAddition.getText());
+            double price = strPrice + additionalPrice;
             String category = cmbCategory.getSelectedItem().toString().toLowerCase();
-            String newRelease = cmbNewRelease.getSelectedItem().toString();
+            boolean newRelease = Boolean.parseBoolean(cmbNewRelease.getSelectedItem().toString());
 
-            if(counterForMovies <= 10){
-                if (price.length() != 0) {
-                    if (Double.parseDouble(price) >= 1) {
-                        if (title.length() != 0) {
-                            dvd.add(new Dvd(title, category, Double.parseDouble(price), Boolean.parseBoolean(newRelease), true));
-                            JOptionPane.showMessageDialog(null, title+" has been added", "Success", JOptionPane.INFORMATION_MESSAGE);
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Error\nTitle field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be zero", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+            if(amountOfMoviesAdded <= 10){
+                if (title.length() != 0) {
+                    dvd.add(new Dvd(title, category, price, newRelease, true));
+                    JOptionPane.showMessageDialog(null, title + " has been added", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error\nPrice field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Error\nTitle field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                counterForMovies++;
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "You have reached the amount of\n"+
-                        "movies that can be added!", "Warning", JOptionPane.WARNING_MESSAGE);
+               amountOfMoviesAdded++;
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "You have reached the amount of\n"
+                        + "movies that can be added!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }catch(NumberFormatException error){
             JOptionPane.showMessageDialog(rootPane, "Error!\nPrice must be a number", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        txtTitle.setText("");
-        txtPrice.setText("");
-        
+        txtTitle.setText("");        
     }//GEN-LAST:event_btnAddMovieActionPerformed
 
     private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
@@ -1967,13 +2008,14 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbCategoryMouseClicked
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
+        //Adding customer into the arraylist
         try{
             String name = txtName.getText().toLowerCase();
             String surname = txtSurname.getText().toLowerCase();
             String phoneNumber = txtPhoneNumber.getText();
             double credit = Double.parseDouble(txtCredit.getText());
 
-            if(counterForCustomers <= 10){
+            if(amountOfCustomersAdded <= 10){
                 if (name.length() != 0) {
                     if (surname.length() != 0) {
                         if (!(phoneNumber.length() != 10)) {
@@ -1988,7 +2030,7 @@ public class DvdRental extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(null, "Error\nName field cannot be left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                counterForCustomers++;
+                amountOfCustomersAdded++;
             }else{
                 JOptionPane.showMessageDialog(rootPane, "You have reached amount of\n"+
                         "customers that can be added!", "Warning!", JOptionPane.WARNING_MESSAGE);
@@ -2003,9 +2045,9 @@ public class DvdRental extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
     private void cmbCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoryActionPerformed
+        //Displaying an image associated to the selected category
         File file = new File(getClass().getResource("/Images").getFile());
         String[] imageList = file.list();
-        //-----------------------------
         String imageName = "";
         for (String imageList1 : imageList) {
             if (imageList1.equalsIgnoreCase(cmbCategory.getSelectedItem().toString()+".jpg")) {
@@ -2021,53 +2063,200 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnLoadAllMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAllMoviesActionPerformed
         // Load and display all the movies
-        DefaultTableModel model = (DefaultTableModel)tblDisplayAllMovies.getModel();
-        if(tblDisplayAllMovies.getRowCount() == 0){
-            ArrayList<Dvd> allMovies = dvd;
-            for (int i = 0; i < allMovies.size(); i++) {
-                model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-                    allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
-            }
-        }else{
-            if(tblDisplayAllMovies.getRowCount() >= 1){
-                tblDisplayAllMovies.removeAll();
-            }
+        Collections.sort(dvd);
+        txtDisplayAllMovies.setText("");
+        txtDisplayAllMovies.setText("Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
+                "====================================================================================\n");
+        for (int i = 0; i < dvd.size(); i++) {
+            txtDisplayAllMovies.append(dvd.get(i).toString() + "\n");
         }
     }//GEN-LAST:event_btnLoadAllMoviesActionPerformed
 
     private void btnLoadAllCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAllCustomersActionPerformed
         // Load and display all customers
-        DefaultTableModel model = (DefaultTableModel)tblDisplayAllCustomers.getModel();
-        ArrayList<Customer> allCustomers = customers;
-        for(int i = 0; i < allCustomers.size(); i++){
-            model.addRow(new Object[]{allCustomers.get(i).getFirsName(), allCustomers.get(i).getSurname(),
-                allCustomers.get(i).getPhoneNum(), Double.toString(allCustomers.get(i).getCredit()),
-                Boolean.toString(allCustomers.get(i).isCanRent())});
+        Collections.sort(customers);
+        txtDisplayAllCustomers.setText("");
+        txtDisplayAllCustomers.setText("Firstname\t| Surname\t| Phone Number\t| Credit\t| Can rent\n"+
+                "====================================================================================\n");
+        for (int i = 0; i < customers.size(); i++) {
+            txtDisplayAllCustomers.append(customers.get(i).toString()+"\n");
         }
     }//GEN-LAST:event_btnLoadAllCustomersActionPerformed
 
     private void btnLoadAvailableMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadAvailableMoviesActionPerformed
         // Load and display all the available movies
-        DefaultTableModel model = (DefaultTableModel)tblDisplayAvailableMovies.getModel();
-        ArrayList<Dvd> allMovies = dvd;
-        if(tblDisplayAvailableMovies.getRowCount() == 0){
-            for (int i = 0; i < allMovies.size(); i++) {
-                if (allMovies.get(i).isAvailableForRental()) {
-                    model.addRow(new Object[]{allMovies.get(i).getTitle(), allMovies.get(i).getCategory(),
-                        allMovies.get(i).isNewRelease(), allMovies.get(i).getPrice(), allMovies.get(i).isAvailableForRental()});
-                }
+        Collections.sort(dvd);
+        txtDisplayAvailableMovies.setText("");
+        txtDisplayAvailableMovies.setText("Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
+                "====================================================================================\n");
+        for (int i = 0; i < dvd.size(); i++) {
+            if (dvd.get(i).isAvailableForRental() == true) {
+                txtDisplayAvailableMovies.append(dvd.get(i).toString() + "\n");
             }
-        }else{
-            tblDisplayAvailableMovies.removeAll();
         }
     }//GEN-LAST:event_btnLoadAvailableMoviesActionPerformed
 
-    //This method will set/change the backgroup color of a panel to the specified color
+    private void cmbSelectCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSelectCustomerActionPerformed
+        // Selecting details of the selected customer based on their number
+        for (int i = 0; i < customers.size(); i++){
+            if(customers.get(i).getPhoneNum() == cmbSelectCustomer.getSelectedItem()){
+                txtDisplayCustomerName.setText(customers.get(i).getFirsName());
+                txtDisplayCutomerSurname.setText(customers.get(i).getSurname());
+                txtAvailableBalance.setText(Double.toString(customers.get(i).getCredit()));
+            }
+        }
+    }//GEN-LAST:event_cmbSelectCustomerActionPerformed
+
+    private void cmbReturnedMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbReturnedMovieActionPerformed
+        // selecting and displaying all the details relating to the selected movie
+        for(int i = 0; i < dvd.size(); i++){
+            if(dvd.get(i).getTitle() == cmbReturnedMovie.getSelectedItem()){
+                txtReturnTitle.setText(dvd.get(i).getTitle());
+                txtReturnPrice.setText(Double.toString(dvd.get(i).getPrice()));
+                txtReturnCategory.setText(dvd.get(i).getCategory());
+            }
+        }
+    }//GEN-LAST:event_cmbReturnedMovieActionPerformed
+
+    private void btnReturnMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMovieActionPerformed
+        // Code for returning the movie
+        DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();
+        String returnTitle = cmbReturnedMovie.getSelectedItem().toString();
+        String returnCategory = txtReturnCategory.getText();
+        if(dvd.size() >= customers.size()){
+            //dvd arraylist size is bigger or equal to customers arraylist size
+            for(int i = 0; i < dvd.size(); i++){
+                if (returnTitle.equals(dvd.get(i).getTitle())) {
+                    dvd.add(new Dvd(dvd.get(i).getTitle(),  dvd.get(i).getCategory(), dvd.get(i).getPrice(), dvd.get(i).isNewRelease(), true));
+                }
+            }
+            
+            for(int f = 0; f < customerRentDetails.size(); f++){
+                if (returnTitle.equals(customerRentDetails.get(f).getRentedMovieTitle())){
+                    String renteeNumber = customerRentDetails.get(f).getCustmerPhoneNumber();
+                    for (int n = 0; n < customers.size(); n++) {
+                        if (renteeNumber.equals(customers.get(n).getPhoneNum())) {
+                            customers.add(new Customer(customers.get(n).getFirsName(), customers.get(n).getSurname(), customers.get(n).getPhoneNum(), customers.get(n).getCredit(), true));
+                        }
+                    }
+                    //deleting(removing) customer from the rentee arraylist to remove duplication
+                    customerRentDetails.remove(f);
+                }
+            }
+        }else{
+            if(dvd.size() <= customers.size()){
+                //dvd arraylist size is smaller or equal to customers arraylist size
+                for (int i = 0; i < customers.size(); i++) {
+                    if (returnTitle.equals(dvd.get(i).getTitle())) {
+                        dvd.add(new Dvd(dvd.get(i).getTitle(), dvd.get(i).getCategory(), dvd.get(i).getPrice(), dvd.get(i).isNewRelease(), true));
+                    }
+                }
+
+                for (int f = 0; f < customerRentDetails.size(); f++) {
+                    if (returnTitle.equals(customerRentDetails.get(f).getRentedMovieTitle())) {
+                        String renteeNumber = customerRentDetails.get(f).getCustmerPhoneNumber();
+                        for (int n = 0; n < customers.size(); n++) {
+                            if (renteeNumber.equals(customers.get(n).getPhoneNum())) {
+                                customers.add(new Customer(customers.get(n).getFirsName(), customers.get(n).getSurname(), customers.get(n).getPhoneNum(), customers.get(n).getCredit(), true));
+                            }
+                        }
+                        //deleting(removing) customer from the rentee arraylist to remove duplication
+                        customerRentDetails.remove(f);
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btnReturnMovieActionPerformed
+
+    private void btnRentMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentMovieActionPerformed
+        DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();
+        String customerNumber = cmbSelectCustomer.getSelectedItem().toString();
+        double rentedMoviePrice = Double.parseDouble(model.getValueAt(tblDisplayRentalMovies.getSelectedRow(), 3).toString());
+        boolean available = Boolean.parseBoolean(model.getValueAt(tblDisplayRentalMovies.getSelectedRow(), 4).toString());
+        String rentedMovieTitle = model.getValueAt(tblDisplayRentalMovies.getSelectedRow(), 0).toString();
+        String fName = txtDisplayCustomerName.getText();
+        String surname = txtDisplayCutomerSurname.getText();
+        double credAmount = Double.parseDouble(txtAvailableBalance.getText()) - rentedMoviePrice;
+        String cat = model.getValueAt(tblDisplayRentalMovies.getSelectedRow(), 1).toString();
+        boolean newRelease = Boolean.parseBoolean(model.getValueAt(tblDisplayRentalMovies.getSelectedRow(), 2).toString());
+        int rent = 0;
+        
+        for(int i = 0; i < customers.size(); i++){
+            if(customerNumber.equals(customers.get(i).getPhoneNum())){
+                //customer can rent a movie
+                if(customers.get(i).isCanRent() == true){
+                    JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n after customers.get(i).isCanRent()");
+                    String number = customers.get(i).getPhoneNum();
+                    if (available == true) {
+                        if (customers.get(i).getCredit() >= rentedMoviePrice) {
+                            customers.remove(i);
+                            JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n after customers.remove(i);");
+                            customerRentDetails.add(new RentMovie(rentedMovieTitle, number, fName, surname));
+                            model.removeRow(tblDisplayRentalMovies.getSelectedRow());//Removing row that have a rented movie
+                            customers.add(new Customer(fName, surname, number, credAmount, false));
+                            for(int r = 0; r < dvd.size(); r++){
+                                if (rentedMovieTitle.equals(dvd.get(r).getTitle())) {
+                                    dvd.remove(i);
+                                    dvd.add(new Dvd(rentedMovieTitle, cat, rentedMoviePrice, newRelease, false));
+                                    break;
+                                }
+                            }
+                            
+                            JOptionPane.showMessageDialog(rootPane, "Hello, "+fName+"\n"+
+                                    "You have rented, "+rentedMovieTitle+"\n\nWe hope you will enjoy it...","Rented successfully!",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            
+                            cmbReturnedMovie.removeAllItems(); //removing all items before populating to limit duplicates
+                            //populating the combobox with the rented movie (this movie must be returned later)
+                            for(int ret = 0; ret < customerRentDetails.size(); ret++){
+                                cmbReturnedMovie.addItem(customerRentDetails.get(ret).getRentedMovieTitle());
+                                JOptionPane.showMessageDialog(rootPane, "value of 'ret' ="+i+"\n inside for(int ret = 0; ret < customerRentDetails.size(); ret++)");
+                            }
+                            //break;
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Sorry, You do not have enough money to rent this movie",
+                                    "Warning", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Sorry, This movie is not available for rental",
+                                "Warning", JOptionPane.WARNING_MESSAGE);
+                    }
+                    rent++;
+                }
+            }
+            JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n before END OF LOOP");
+        }
+        
+        if(rent == 0){
+            JOptionPane.showMessageDialog(rootPane, "Sorry you cannot rent any movie.\n"
+                            + "You need to return a movie!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRentMovieActionPerformed
+
+    private void txtPriceAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceAdditionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceAdditionActionPerformed
+
+    private void cmbNewReleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNewReleaseActionPerformed
+        // Additional price depending on whether the movie is new or not
+        if(cmbNewRelease.getSelectedItem().equals("true")){
+            txtPrice.setText("10.00");
+            txtPriceAddition.setText("5.00");
+        }else{
+            if(cmbNewRelease.getSelectedItem().equals("false")){
+                txtPrice.setText("10.00");
+                txtPriceAddition.setText("0.00");
+            }
+        }
+    }//GEN-LAST:event_cmbNewReleaseActionPerformed
+
+    /*This method will set/change the backgroup color
+    of the selected panel to the specified color*/
     public void setColor(JPanel panel){
         panel.setBackground(new Color(0,255,255));
     }
     
-    //This method will reset the background color to the initial color
+    //This method will reset the background color to the a panel to it's initial color
     public void resetColor(JPanel panel){
         panel.setBackground(new Color(0,0,152));
     }
@@ -2127,6 +2316,7 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JButton btnSearchMovie;
     private javax.swing.JComboBox<String> cmbCategory;
     private javax.swing.JComboBox<String> cmbNewRelease;
+    private javax.swing.JComboBox<String> cmbReturnedMovie;
     private javax.swing.JComboBox<String> cmbSelectCustomer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2160,11 +2350,14 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2176,17 +2369,18 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -2209,20 +2403,21 @@ public class DvdRental extends javax.swing.JFrame {
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlRent;
     private javax.swing.JPanel pnlSearch;
-    private javax.swing.JTable tblDisplayAllCustomers;
-    private javax.swing.JTable tblDisplayAllMovies;
-    private javax.swing.JTable tblDisplayAvailableMovies;
     private javax.swing.JTable tblDisplayCustomers;
     private javax.swing.JTable tblDisplayMovies;
     private javax.swing.JTable tblDisplayRentalMovies;
     private javax.swing.JTable tblDisplaySearchedMovies;
     private javax.swing.JTextField txtAvailableBalance;
     private javax.swing.JTextField txtCredit;
+    private javax.swing.JTextArea txtDisplayAllCustomers;
+    private javax.swing.JTextArea txtDisplayAllMovies;
+    private javax.swing.JTextArea txtDisplayAvailableMovies;
     private javax.swing.JTextField txtDisplayCustomerName;
     private javax.swing.JTextField txtDisplayCutomerSurname;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhoneNumber;
     private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtPriceAddition;
     private javax.swing.JTextField txtReturnCategory;
     private javax.swing.JTextField txtReturnPrice;
     private javax.swing.JTextField txtReturnTitle;
