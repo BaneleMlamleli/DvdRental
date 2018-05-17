@@ -2212,7 +2212,6 @@ public class DvdRental extends javax.swing.JFrame {
                                 cmbReturnedMovie.addItem(customerRentDetails.get(ret).getRentedMovieTitle());
                                 JOptionPane.showMessageDialog(rootPane, "value of 'ret' ="+i+"\n inside for(int ret = 0; ret < customerRentDetails.size(); ret++)");
                             }
-                            //break;
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Sorry, You do not have enough money to rent this movie",
                                     "Warning", JOptionPane.WARNING_MESSAGE);
