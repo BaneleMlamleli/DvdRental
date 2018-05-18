@@ -1822,6 +1822,10 @@ public class DvdRental extends javax.swing.JFrame {
         pnlRent.setVisible(true);
         pnlSearch.setVisible(false);
         
+        txtDisplayCustomerName.setText("");
+        txtDisplayCutomerSurname.setText("");
+        txtAvailableBalance.setText("");
+        
         // Load and display all the available movies
         DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();
         
@@ -1838,7 +1842,6 @@ public class DvdRental extends javax.swing.JFrame {
 
         //Add all the customer's phone numbers in the dropbox 
         if(cmbSelectCustomer.getItemCount() == 0){
-            //ArrayList<Customer> allCustomers = customers;
             for (int i = 0; i < customers.size(); i++) {
                 cmbSelectCustomer.addItem(customers.get(i).getPhoneNum());
             }
@@ -1882,10 +1885,7 @@ public class DvdRental extends javax.swing.JFrame {
         // Delete selected customer
         DefaultTableModel model = (DefaultTableModel) tblDisplayCustomers.getModel();
         String deletedCustomerName = model.getValueAt(tblDisplayCustomers.getSelectedRow(), 0).toString();
-        String deletedCustomerSurname = model.getValueAt(tblDisplayCustomers.getSelectedRow(), 1).toString();
         String deletedCustomerPhoneNumber = model.getValueAt(tblDisplayCustomers.getSelectedRow(), 2).toString();
-        String deletedCustomerCredit = model.getValueAt(tblDisplayCustomers.getSelectedRow(), 3).toString();
-        boolean deletedCustomerCanRent = Boolean.parseBoolean(model.getValueAt(tblDisplayCustomers.getSelectedRow(), 4).toString());
         int confirm = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to delete "+deletedCustomerName+"'s details?", "Delete customer", JOptionPane.OK_CANCEL_OPTION);
         //0 = okay, 2 = cancel
         if(confirm == 0){
@@ -1902,10 +1902,6 @@ public class DvdRental extends javax.swing.JFrame {
         // Delete selected movie
         DefaultTableModel model = (DefaultTableModel) tblDisplayMovies.getModel();
         String deletedMovieTitle = model.getValueAt(tblDisplayMovies.getSelectedRow(), 0).toString();
-        String deletedMovieCategory = model.getValueAt(tblDisplayMovies.getSelectedRow(), 1).toString();
-        boolean deletedMovieNewRelease = Boolean.parseBoolean(model.getValueAt(tblDisplayMovies.getSelectedRow(), 2).toString());
-        String deletedMoviePrice = model.getValueAt(tblDisplayMovies.getSelectedRow(), 3).toString();
-        boolean deletedMovieAvailable = Boolean.parseBoolean(model.getValueAt(tblDisplayMovies.getSelectedRow(), 4).toString());
         int confirm = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to delete selected movie?", "Delete Movie", JOptionPane.OK_CANCEL_OPTION);
         //0 = okay, 2 = cancel
         if(confirm == 0){
@@ -2065,8 +2061,8 @@ public class DvdRental extends javax.swing.JFrame {
         // Load and display all the movies
         Collections.sort(dvd);
         txtDisplayAllMovies.setText("");
-        txtDisplayAllMovies.setText("Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
-                "====================================================================================\n");
+        txtDisplayAllMovies.setText(" Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
+                "=====================================================================================\n");
         for (int i = 0; i < dvd.size(); i++) {
             txtDisplayAllMovies.append(dvd.get(i).toString() + "\n");
         }
@@ -2076,8 +2072,8 @@ public class DvdRental extends javax.swing.JFrame {
         // Load and display all customers
         Collections.sort(customers);
         txtDisplayAllCustomers.setText("");
-        txtDisplayAllCustomers.setText("Firstname\t| Surname\t| Phone Number\t| Credit\t| Can rent\n"+
-                "====================================================================================\n");
+        txtDisplayAllCustomers.setText(" Firstname\t| Surname\t| Phone Number\t| Credit\t| Can rent\n"+
+                "=====================================================================================\n");
         for (int i = 0; i < customers.size(); i++) {
             txtDisplayAllCustomers.append(customers.get(i).toString()+"\n");
         }
@@ -2087,8 +2083,8 @@ public class DvdRental extends javax.swing.JFrame {
         // Load and display all the available movies
         Collections.sort(dvd);
         txtDisplayAvailableMovies.setText("");
-        txtDisplayAvailableMovies.setText("Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
-                "====================================================================================\n");
+        txtDisplayAvailableMovies.setText(" Title\t| Category\t| New release\t    | Price\t| Available for rental\n"+
+                "=====================================================================================\n");
         for (int i = 0; i < dvd.size(); i++) {
             if (dvd.get(i).isAvailableForRental() == true) {
                 txtDisplayAvailableMovies.append(dvd.get(i).toString() + "\n");
@@ -2098,8 +2094,9 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void cmbSelectCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSelectCustomerActionPerformed
         // Selecting details of the selected customer based on their number
+        String selectedCustomer = cmbSelectCustomer.getSelectedItem().toString();
         for (int i = 0; i < customers.size(); i++){
-            if(customers.get(i).getPhoneNum() == cmbSelectCustomer.getSelectedItem()){
+            if(selectedCustomer.equals(customers.get(i).getPhoneNum())){
                 txtDisplayCustomerName.setText(customers.get(i).getFirsName());
                 txtDisplayCutomerSurname.setText(customers.get(i).getSurname());
                 txtAvailableBalance.setText(Double.toString(customers.get(i).getCredit()));
@@ -2109,8 +2106,9 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void cmbReturnedMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbReturnedMovieActionPerformed
         // selecting and displaying all the details relating to the selected movie
+        String returnedMovie = cmbReturnedMovie.getSelectedItem().toString();
         for(int i = 0; i < dvd.size(); i++){
-            if(dvd.get(i).getTitle() == cmbReturnedMovie.getSelectedItem()){
+            if(returnedMovie.equals(dvd.get(i).getTitle())){
                 txtReturnTitle.setText(dvd.get(i).getTitle());
                 txtReturnPrice.setText(Double.toString(dvd.get(i).getPrice()));
                 txtReturnCategory.setText(dvd.get(i).getCategory());
@@ -2120,9 +2118,14 @@ public class DvdRental extends javax.swing.JFrame {
 
     private void btnReturnMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMovieActionPerformed
         // Code for returning the movie
+        System.out.println("===============================");
+        for(int mr = 0; mr < customerRentDetails.size(); mr++){
+            System.out.println(customerRentDetails.get(mr).toString()+"\n");
+        }
+        System.out.println("===============================");
+        
         DefaultTableModel model = (DefaultTableModel)tblDisplayRentalMovies.getModel();
         String returnTitle = cmbReturnedMovie.getSelectedItem().toString();
-        String returnCategory = txtReturnCategory.getText();
         if(dvd.size() >= customers.size()){
             //dvd arraylist size is bigger or equal to customers arraylist size
             for(int i = 0; i < dvd.size(); i++){
@@ -2143,26 +2146,26 @@ public class DvdRental extends javax.swing.JFrame {
                     customerRentDetails.remove(f);
                 }
             }
-        }else{
-            if(dvd.size() <= customers.size()){
-                //dvd arraylist size is smaller or equal to customers arraylist size
-                for (int i = 0; i < customers.size(); i++) {
-                    if (returnTitle.equals(dvd.get(i).getTitle())) {
-                        dvd.add(new Dvd(dvd.get(i).getTitle(), dvd.get(i).getCategory(), dvd.get(i).getPrice(), dvd.get(i).isNewRelease(), true));
-                    }
+        }
+        
+        if (dvd.size() < customers.size()) {
+            //dvd arraylist size is smaller than customers arraylist size
+            for (int i = 0; i < customers.size(); i++) {
+                if (returnTitle.equals(dvd.get(i).getTitle())) {
+                    dvd.add(new Dvd(dvd.get(i).getTitle(), dvd.get(i).getCategory(), dvd.get(i).getPrice(), dvd.get(i).isNewRelease(), true));
                 }
+            }
 
-                for (int f = 0; f < customerRentDetails.size(); f++) {
-                    if (returnTitle.equals(customerRentDetails.get(f).getRentedMovieTitle())) {
-                        String renteeNumber = customerRentDetails.get(f).getCustmerPhoneNumber();
-                        for (int n = 0; n < customers.size(); n++) {
-                            if (renteeNumber.equals(customers.get(n).getPhoneNum())) {
-                                customers.add(new Customer(customers.get(n).getFirsName(), customers.get(n).getSurname(), customers.get(n).getPhoneNum(), customers.get(n).getCredit(), true));
-                            }
+            for (int f = 0; f < customerRentDetails.size(); f++) {
+                if (returnTitle.equals(customerRentDetails.get(f).getRentedMovieTitle())) {
+                    String renteeNumber = customerRentDetails.get(f).getCustmerPhoneNumber();
+                    for (int n = 0; n < customers.size(); n++) {
+                        if (renteeNumber.equals(customers.get(n).getPhoneNum())) {
+                            customers.add(new Customer(customers.get(n).getFirsName(), customers.get(n).getSurname(), customers.get(n).getPhoneNum(), customers.get(n).getCredit(), true));
                         }
-                        //deleting(removing) customer from the rentee arraylist to remove duplication
-                        customerRentDetails.remove(f);
                     }
+                    //deleting(removing) customer from the rentee arraylist to remove duplication
+                    customerRentDetails.remove(f);
                 }
             }
         }
@@ -2185,12 +2188,10 @@ public class DvdRental extends javax.swing.JFrame {
             if(customerNumber.equals(customers.get(i).getPhoneNum())){
                 //customer can rent a movie
                 if(customers.get(i).isCanRent() == true){
-                    JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n after customers.get(i).isCanRent()");
                     String number = customers.get(i).getPhoneNum();
                     if (available == true) {
                         if (customers.get(i).getCredit() >= rentedMoviePrice) {
                             customers.remove(i);
-                            JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n after customers.remove(i);");
                             customerRentDetails.add(new RentMovie(rentedMovieTitle, number, fName, surname));
                             model.removeRow(tblDisplayRentalMovies.getSelectedRow());//Removing row that have a rented movie
                             customers.add(new Customer(fName, surname, number, credAmount, false));
@@ -2198,7 +2199,7 @@ public class DvdRental extends javax.swing.JFrame {
                                 if (rentedMovieTitle.equals(dvd.get(r).getTitle())) {
                                     dvd.remove(i);
                                     dvd.add(new Dvd(rentedMovieTitle, cat, rentedMoviePrice, newRelease, false));
-                                    break;
+                                    //break;
                                 }
                             }
                             
@@ -2210,7 +2211,6 @@ public class DvdRental extends javax.swing.JFrame {
                             //populating the combobox with the rented movie (this movie must be returned later)
                             for(int ret = 0; ret < customerRentDetails.size(); ret++){
                                 cmbReturnedMovie.addItem(customerRentDetails.get(ret).getRentedMovieTitle());
-                                JOptionPane.showMessageDialog(rootPane, "value of 'ret' ="+i+"\n inside for(int ret = 0; ret < customerRentDetails.size(); ret++)");
                             }
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Sorry, You do not have enough money to rent this movie",
@@ -2223,7 +2223,6 @@ public class DvdRental extends javax.swing.JFrame {
                     rent++;
                 }
             }
-            JOptionPane.showMessageDialog(rootPane, "value of 'i' ="+i+"\n before END OF LOOP");
             break;
         }
         

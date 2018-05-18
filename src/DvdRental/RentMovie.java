@@ -45,6 +45,9 @@ public class RentMovie {
     public void setCustomerSurname(String customerSurname) {
         this.customerSurname = customerSurname;
     }
-    
-    
+
+    @Override
+    public String toString(){
+        return getCustomerName()+", "+getCustomerSurname()+", "+getRentedMovieTitle()+", "+getCustmerPhoneNumber();
+    }
 }
