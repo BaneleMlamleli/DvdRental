@@ -14,6 +14,7 @@ public class Dvd implements Comparable<Dvd> {
     private boolean availableForRental;
     private double price;
     
+    //default constructor
     public Dvd(){}
     
     public Dvd(String title,  String category, double price, boolean newRelease, boolean avail){

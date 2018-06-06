@@ -14,6 +14,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 public class DvdRental extends javax.swing.JFrame {
 
+    //creating an instance of the Customer class
     Customer objCustomer = new Customer();
     Dvd objDvd = new Dvd();
     
@@ -2157,7 +2158,7 @@ public class DvdRental extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(rootPane, "Hello, "+customers.get(n).getFirsName()+
                                     "\nThank for return movie, "+customerRentDetails.get(f).getRentedMovieTitle()+
                                     "\nWe hope you enjoyed it!!");
-                            cmbReturnedMovie.remove(n);
+                            //cmbReturnedMovie.remove(n);
                             txtReturnTitle.setText("");
                             txtReturnPrice.setText("");
                             txtReturnCategory.setText("");
@@ -2190,7 +2191,7 @@ public class DvdRental extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(rootPane, "Hello, "+customers.get(nn).getFirsName()+
                                     "\nThank for return movie, "+customerRentDetails.get(ff).getRentedMovieTitle()+
                                     "\nWe hope you enjoyed it!!");
-                            cmbReturnedMovie.remove(nn);
+                            //cmbReturnedMovie.remove(nn);
                             txtReturnTitle.setText("");
                             txtReturnPrice.setText("");
                             txtReturnCategory.setText("");
